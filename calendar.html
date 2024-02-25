@@ -4,47 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="checkinstyle.css">
-    <title>Mood Tracker</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        #calendar {
-            max-width: 800px;
-            margin: 0 auto;
-            font-family: Georgia, serif;
-        }
-
-        #moodForm {
-            margin-top: 20px;
-            font-family: Georgia, serif;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-family: Georgia, serif;
-        }
-
-        select {
-            width: 200px;
-            padding: 8px;
-            margin-bottom: 10px;
-            font-family: Georgia, serif;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
-            font-family: Georgia, serif;
-        }
-    </style>
+    <title>Real-Time Mood Tracker</title>
+    <link rel="responses" href="responses.js">
+    <link rel="stylesheet" href="calendarstyle.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 </head>
+<body>
+
+<h2>Real-Time Mood Tracker</h2>
+<div class="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+<div class="menu-sidebar" id="menuSidebar">
+    <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+    <ul>
+        <li><a href="index.html">Check in</a></li>
+        <li><a href="toolPage.html">Tools</a></li>
+        <li><a href="calendar.html">Analyse/Calendar</a></li>
+        <li><a href="getHelp.html">Get Help</a></li>
+    </ul>
+</div>
+<div id="moodForm">
+    <label for="moodSelect">How's your mood today?</label>
+    <select id="moodSelect">
+        <option value="happy" style="background-color: #FFCF60;">Happy</option>
+        <option value="energised" style="background-color: #FFCF60;">Energised</option>
+        <option value="motivated" style="background-color: #FFCF60;">Motivated</option>
+        <option value="focused" style="background-color: #FFCF60;">Focused</option>
+        <option value="chill" style="background-color: #6AC66B;">Chill</option>
+        <option value="calm" style="background-color: #6AC66B;">Calm</option>
+        <option value="cozy" style="background-color: #6AC66B;">Cozy</option>
+        <option value="grateful" style="background-color: #6AC66B;">Grateful</option>
+        <option value="angry" style="background-color: #DE0F3F;">Angry</option>
+        <option value="nervous" style="background-color: #DE0F3F;">Nervous</option>
+        <option value="anxious" style="background-color: #DE0F3F;">Anxious</option>
+        <option value="uneasy" style="background-color: #DE0F3F;">Uneasy</option>
+        <option value="sad" style="background-color: #7BB7E0;">Sad</option>
+        <option value="bored" style="background-color: #7BB7E0;">Bored</option>
+        <option value="discouraged" style="background-color: #7BB7E0;">Discouraged</option>
+        <option value="depressed" style="background-color: #7BB7E0;">Depressed</option>
+        <option value="other" style="background-color: #cccccc;">Other</option>
+    </select>
+
+    <button onclick="trackMood()">Track Mood</button>
+</div>
+
+<div id="calendar"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var calendar = $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: [],
+            timeFormat: 'HH:mm'
+        });
+
+
+        setInterval(updateRealTimeMood, 60000); // Update mood every minute
+        let currentMoment = moment();
+
+        function updateRealTimeMood() {
+            var moodSelect = $('#moodSelect');
+            var selectedMood = moodSelect.val();
+
 
 <body>
     <a href="index.html" class="back-button">&#x2B05;</a>
@@ -133,8 +166,13 @@
                 // Add the mood event to the calendar
                 calendar.fullCalendar('renderEvent', moodEvent, true);
             };
-        });
-    </script>
+
+            // Add the mood event to the calendar
+            calendar.fullCalendar('renderEvent', moodEvent, true);
+        };
+    });
+</script>
+<script src="responses.js"></script>
 
 </body>
 
