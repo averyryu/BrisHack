@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder Swipe UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #quote-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .quote-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease-in-out;
+            cursor: grab;
+            user-select: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .quote-card p {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .swipe-left, .swipe-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #888;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .swipe-left {
+            left: 20px;
+        }
+
+        .swipe-right {
+            right: 20px;
+        }
+
+        #quote-container .swipe-left:hover, #quote-container .swipe-right:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tinder Swipe UI</h2>
+
+    <div id="quote-container">
+        <div class="quote-card" id="quoteCard">
+            <p>This is quote 1.</p>
+        </div>
+        <div class="quote-card" id="quoteCardBack">
+            <p>This is quote 2.</p>
+        </div>
+        <div class="swipe-left" onclick="swipe('left')">👈</div>
+        <div class="swipe-right" onclick="swipe('right')">👉</div>
+    </div>
+
+    <script>
+        const quoteContainer = document.getElementById('quote-container');
+        const quoteCard = document.getElementById('quoteCard');
+        const quoteCardBack = document.getElementById('quoteCardBack');
+        const swipeLeft = document.querySelector('.swipe-left');
+        const swipeRight = document.querySelector('.swipe-right');
+        const quotes = [
+            "This is quote 1.",
+            "This is quote 2.",
+            "This is quote 3.",
+            "This is quote 4."
+            // Add more quotes as needed
+        ];
+
+        let currentQuoteIndex = 0;
+
+        function swipe(direction) {
+            if (direction === 'left') {
+                quoteCard.style.transform = 'translateX(-100%) rotate(-20deg)';
+                swipeRight.style.opacity = '0';
+            } else if (direction === 'right') {
+                quoteCard.style.transform = 'translateX(100%) rotate(20deg)';
+                swipeLeft.style.opacity = '0';
+            }
+
+            setTimeout(() => {
+                loadNextQuote();
+                resetCard();
+            }, 300);
+        }
+
+        function loadNextQuote() {
+            currentQuoteIndex++;
+
+            if (currentQuoteIndex >= quotes.length) {
+                currentQuoteIndex = 0; // Start over if reached the end
+            }
+
+            // Display the next quote
+            quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+            quoteCardBack.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+        }
+
+        function resetCard() {
+            quoteCard.style.transform = 'rotate(0) translateX(0)';
+            swipeLeft.style.opacity = '1';
+            swipeRight.style.opacity = '1';
+        }
+
+        // Drag and drop functionality
+        let isDragging = false;
+        let initialX, offsetX;
+
+        quoteCard.addEventListener('mousedown', startDrag);
+        quoteCard.addEventListener('mousemove', drag);
+        quoteCard.addEventListener('mouseup', endDrag);
+        quoteCard.addEventListener('mouseleave', endDrag);
+
+        function startDrag(e) {
+            isDragging = true;
+            initialX = e.clientX - offsetX;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                offsetX = e.clientX - initialX;
+                updateCardPosition();
+            }
+        }
+
+        function endDrag() {
+            isDragging = false;
+            checkSwipeDirection();
+        }
+
+        function updateCardPosition() {
+            const maxRotation = 20;
+            const maxTranslateX = 100;
+            const rotation = (offsetX / maxTranslateX) * maxRotation;
+
+            quoteCard.style.transform = `translateX(${offsetX}px) rotate(${rotation}deg)`;
+        }
+
+        function checkSwipeDirection() {
+            const threshold = 50;
+
+            if (offsetX > threshold) {
+                swipe('right');
+            } else if (offsetX < -threshold) {
+                swipe('left');
+            } else {
+                resetCard();
+            }
+        }
+    </script>
+
+</body>
+</html>
