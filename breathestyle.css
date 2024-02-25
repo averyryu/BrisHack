@@ -1,10 +1,12 @@
 body {
-    font-family: sans-serif;
+    font-family: Georgia, serif;
     display: grid;
     height: 100vh;
     place-items: center;
 }
-
+h1{
+    font-weight: bold;
+}
 .base-timer {
     position: relative;
     width: 300px;
