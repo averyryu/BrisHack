@@ -95,22 +95,40 @@
             if (direction === 'left') {
                 quoteCard.style.transform = 'translateX(-100%) rotate(-20deg)';
                 swipeRight.style.opacity = '0';
+                setTimeout(() => {
+                    loadPreviousQuote();
+                    resetCard();
+                }, 300);
+
             } else if (direction === 'right') {
                 quoteCard.style.transform = 'translateX(100%) rotate(20deg)';
                 swipeLeft.style.opacity = '0';
+                setTimeout(() => {
+                    loadNextQuote();
+                    resetCard();
+                }, 300);
+            }
+        }
+
+        function loadPreviousQuote() {
+            currentQuoteIndex--;
+
+            // End over if reached the front
+            if (currentQuoteIndex < 0) {
+                currentQuoteIndex = quotes.length-1;
             }
 
-            setTimeout(() => {
-                loadNextQuote();
-                resetCard();
-            }, 300);
+            // Display the next quote
+            quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+            quoteCardBack.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
         }
 
         function loadNextQuote() {
             currentQuoteIndex++;
 
+            // Start over if reached the end
             if (currentQuoteIndex >= quotes.length) {
-                currentQuoteIndex = 0; // Start over if reached the end
+                currentQuoteIndex = 0;
             }
 
             // Display the next quote
