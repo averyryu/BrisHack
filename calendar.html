@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #calendar {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #moodForm {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            width: 200px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+<body>
+
+    <h2>Mood Tracker</h2>
+
+    <div id="moodForm">
+        <label for="moodSelect">How's your mood today?</label>
+        <select id="moodSelect" onchange="handleMoodSelect()">
+            <option value="" selected disabled>Select or type your mood</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="excited">Excited</option>
+            <option value="calm">Calm</option>
+            <option value="other">Other (Type your mood)</option>
+        </select>
+
+        <input type="text" id="customMood" placeholder="Type your mood" style="display: none;">
+
+        <button onclick="trackMood()">Track Mood</button>
+    </div>
+
+    <div id="calendar"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var calendar = $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: []
+            });
+
+            window.handleMoodSelect = function () {
+                var moodSelect = $('#moodSelect');
+                var customMoodInput = $('#customMood');
+
+                if (moodSelect.val() === 'other') {
+                    customMoodInput.show();
+                } else {
+                    customMoodInput.hide();
+                }
+            };
+
+            window.trackMood = function () {
+                var moodSelect = $('#moodSelect');
+                var selectedMood = moodSelect.val();
+                var customMood = $('#customMood').val().trim();
+
+                if (!selectedMood && customMood === '') {
+                    alert('Please select or type your mood.');
+                    return;
+                }
+
+                var moodTitle = customMood !== '' ? 'Mood: ' + customMood : 'Mood: ' + selectedMood;
+
+                var moodEvent = {
+                    title: moodTitle,
+                    start: moment(),
+                    allDay: true
+                };
+
+                // Add the mood event to the calendar
+                calendar.fullCalendar('renderEvent', moodEvent, true);
+
+                // Clear the form fields
+                moodSelect.val('');
+                $('#customMood').val('');
+
+                // Hide the custom mood input
+                $('#customMood').hide();
+
+                alert('Mood tracked successfully!');
+            };
+        });
+    </script>
+
+</body>
+</html>
