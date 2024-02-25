@@ -3,10 +3,23 @@
 
 <head>
     <link rel="stylesheet" href="questionstyle.css">
+    <link rel="stylesheet" href="checkinstyle.css">
     <title>Journaling Time</title>
+    <style>
+        .button {
+            border: 2px solid #ccc; /* Default border color */
+        }
+        
+        .button.clicked {
+            border-color: #ff0000; /* Change to your desired color when clicked */
+        }
+    </style>
 </head>
 
 <body>
+    <a href="emotion-red.html" class="back-button">&#x2B05;</a>
+
+    <a href="index.html" class="cancel-button">Cancel</a>
     <h2>
         <div style="text-align: center;">What were you doing when you feel such way?</div>
         <br>
@@ -15,47 +28,46 @@
     <div class="Question">
         <div class="question1">
             <p>
-            <div style="text-align: center;">People</div>
+                <div style="text-align: center;">People</div>
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button">By yourself</button>
-            <button class="button">Co-worker</button>
-            <button class="button">Pets</button>
-            <button class="button">Family</button>
-            <button class="button">Friends</button>
-            <button class="button">+</button>
+            <button class="button" onclick="handleButtonClick(this)">By yourself</button>
+            <button class="button" onclick="handleButtonClick(this)">Co-worker</button>
+            <button class="button" onclick="handleButtonClick(this)">Pets</button>
+            <button class="button" onclick="handleButtonClick(this)">Family</button>
+            <button class="button" onclick="handleButtonClick(this)">Friends</button>
+            <button class="button" onclick="handleButtonClick(this)">+</button>
         </div>
         <br><br>
         <div class="question2">
             <p>
-            <div style="text-align: center;">Places</div>
+                <div style="text-align: center;">Places</div>
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button">Home</button>
-            <button class="button">School</button>
-            <button class="button">Outside</button>
-            <button class="button">Commuting</button>
-            <button class="button">Work</button>
-            <button class="button">+</button>
+            <button class="button" onclick="handleButtonClick(this)">Home</button>
+            <button class="button" onclick="handleButtonClick(this)">School</button>
+            <button class="button" onclick="handleButtonClick(this)">Outside</button>
+            <button class="button" onclick="handleButtonClick(this)">Commuting</button>
+            <button class="button" onclick="handleButtonClick(this)">Work</button>
+            <button class="button" onclick="handleButtonClick(this)">+</button>
         </div>
         <br><br>
         <div class="question3">
             <p>
-            <div style="text-align: center;">Events</div>
+                <div style="text-align: center;">Events</div>
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button">Resting</button>
-            <button class="button">Driving</button>
-            <button class="button">Working</button>
-            <button class="button">Hanging Out</button>
-            <button class="button">Eating</button>
-            <button class="button">Hobbie</button>
-            <button class="button">+</button>
+            <button class="button" onclick="handleButtonClick(this)">Resting</button>
+            <button class="button" onclick="handleButtonClick(this)">Driving</button>
+            <button class="button" onclick="handleButtonClick(this)">Working</button>
+            <button class="button" onclick="handleButtonClick(this)">Hanging Out</button>
+            <button class="button" onclick="handleButtonClick(this)">Eating</button>
+            <button class="button" onclick="handleButtonClick(this)">Hobbie</button>
+            <button class="button" onclick="handleButtonClick(this)">+</button>
         </div>
-        <!-- Add the "Others" button -->
     </div>
 
     <div class="Next">
@@ -64,7 +76,18 @@
         </a>
     </div>
 
-    </div>
+    <script>
+        function handleButtonClick(button) {
+            // Remove 'clicked' class from all buttons
+            var allButtons = document.querySelectorAll('.button');
+            allButtons.forEach(function (btn) {
+                btn.classList.remove('clicked');
+            });
+
+            // Add 'clicked' class to the clicked button
+            button.classList.add('clicked');
+        }
+    </script>
 </body>
 
 </html>
