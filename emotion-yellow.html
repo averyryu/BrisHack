@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkinstyle.css">
+    <title>High Energy, Low Pleasantness</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<p id="sentence">Which one describes what you are feeling the best?</p>
+
+<div class="button-container">
+    <a href="page1.html" id="button1" class="color-button">Motivated</a>
+    <a href="page2.html" id="button2" class="color-button">Happy</a>
+</div>
+
+<div class="button-container">
+    <a href="page3.html" id="button3" class="color-button">Energised</a>
+    <a href="page4.html" id="button4" class="color-button">Focused</a>
+</div>
+
+<script>
+    var buttonColor = "#FFCF60";
+    var buttons = document.getElementsByClassName("color-button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = buttonColor;
+    }
+</script>
+
+</body>
+</html>
