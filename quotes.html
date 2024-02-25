@@ -48,11 +48,15 @@
         }
 
         .swipe-left {
-            left: 20px;
+            position: absolute;
+            right: calc(50% + 180px);
+            top: 260px;
         }
 
         .swipe-right {
-            right: 20px;
+            position: absolute;
+            left: calc(50% + 180px);
+            top: 260px;
         }
 
         #quote-container .swipe-left:hover, #quote-container .swipe-right:hover {
@@ -71,9 +75,13 @@
         <div class="quote-card" id="quoteCardBack">
             <p>This is quote 2.</p>
         </div>
+    </div>
+
+    <div>
         <div class="swipe-left" onclick="swipe('left')"><</div>
         <div class="swipe-right" onclick="swipe('right')">></div>
     </div>
+
 
     <script>
         const quoteContainer = document.getElementById('quote-container');
