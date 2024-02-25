@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    font-size: 36px;
+    text-decoration: none;
+    color: black
+}
+.back-button:hover {
+    background-color: lightgray;
+}
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+.cancel-button:hover {
+    /* background-color: lightgray;
+    border-radius: 5px; */
+    text-decoration: underline;
+}
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-button {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    
+    position: relative;
+}
+
+#button1:hover {
+    background-color: #5bab5d!important;
+}
+
+#button1::after {
+    content: "Grateful";
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 20px;
+    line-height: 10;
+
+    top: 0;
+}
+
+#button1:hover::after {
+    content: "appreciative of something or someone";
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    margin: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button2:hover {
+    background-color: #5bab5d !important;
+}
+
+#button2::after {
+    content: "Calm";
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 20px;
+    line-height: 10;
+
+    top: 0;
+}
+
+#button2:hover::after {
+    content: "feeling free of stress, agitation, and worry";
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    margin: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button3:hover {
+    background-color: #5bab5d !important;
+}
+
+#button3::after {
+    content: "Chill";
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 20px;
+    line-height: 10;
+
+    top: 0;
+}
+
+#button3:hover::after {
+    content: "feeling relaxed and easygoing";
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    margin: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button4:hover {
+    background-color: #5bab5d !important;
+}
+
+#button4::after {
+    content: "Thankful";
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 20px;
+    line-height: 10;
+
+    top: 0;
+}
+
+#button4:hover::after {
+    content: "feeling pleased and appreciative";
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    margin: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sentence {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: serif;
+}
