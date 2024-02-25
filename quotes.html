@@ -103,18 +103,27 @@
         if (direction === 'left') {
             loadPreviousQuote();
             quoteCard.style.transform = 'translateX(-100%) rotate(-20deg)';
-            setTimeout(() => {
-                quoteCard.style.transform = 'rotate(0) translateX(0)';
-            }, 300);
-
         } else if (direction === 'right') {
             loadNextQuote();
             quoteCard.style.transform = 'translateX(100%) rotate(20deg)';
-            setTimeout(() => {
-                quoteCard.style.transform = 'rotate(0) translateX(0)';
-            }, 300);
+        }
+        requestAnimationFrame(changeOpacity);
+    }
+
+    function changeOpacity(timestamp) {
+        let startOpacity = 1;
+        let endOpacity = 0; // Set the final opacity value when the card reaches 20 degrees rotation
+        const duration = 300; // Duration in milliseconds for the opacity transition
+        const startTime = performance.now(); // Get the start time of the transition
+        let progress = timestamp - startTime;
+        let opacity = startOpacity + (endOpacity - startOpacity) * progress / duration;
+        quoteCard.style.opacity = opacity;
+
+        if (progress < duration) {
+            requestAnimationFrame(changeOpacity);
         }
     }
+
 
     function loadPreviousQuote() {
         currentQuoteIndex--;
