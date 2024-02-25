@@ -81,10 +81,13 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            events: []
+            events: [],
+            timeFormat: 'HH:mm'
         });
 
+
         setInterval(updateRealTimeMood, 60000); // Update mood every minute
+        let currentMoment = moment();
 
         function updateRealTimeMood() {
             var moodSelect = $('#moodSelect');
@@ -95,11 +98,9 @@
                 return;
             }
 
-            var currentMoment = moment();
-            var currentTime = currentMoment.format('HH:mm:ss');
             var moodEvent = {
                 title: selectedMood,
-                start: moment(currentMoment.format('YYYY-MM-DD') + ' ' + currentTime),
+                start: currentMoment,
                 allDay: false,
                 color: moodSelect.find('option:selected').css('background-color')
             };
@@ -114,7 +115,7 @@
 
             var moodEvent = {
                 title: selectedMood,
-                start: moment(),
+                start: currentMoment,
                 allDay: false,
                 color: moodSelect.find('option:selected').css('background-color')
             };
