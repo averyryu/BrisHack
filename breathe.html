@@ -5,26 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timer</title>
   <link rel="stylesheet" href="breathestyle.css">
-  <link rel="stylesheet" href="style.css">
+<!--  <link rel="stylesheet" href="checkinstyle.css">-->
   <link rel="responses" href="responses.js">
 </head>
 <body>
-<div class="menu-icon" onclick="toggleMenu()">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
-<div class="menu-sidebar" id="menuSidebar">
-  <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
-  <ul>
-    <li><a href="index.html">Check in</a></li>
-    <li><a href="toolPage.html">Tools</a></li>
-    <li><a href="calendar.html">Analyse/Calendar</a></li>
-    <li><a href="#">Get Help</a></li>
-  </ul>
-</div>
+<a href="toolPage.html" class="back-button">&#x2B05;</a>
 <p id="sentence">Timer</p>
-
+<div class="sidebar">
+  <h2>4-7-8 Breathing Technique</h2>
+  <p>The 4-7-8 breathing technique involves breathing in for 4 seconds, holding the breath for 7 seconds, and exhaling for 8 seconds. This breathing pattern aims to reduce anxiety or help people get to sleep. It is a form of pranayama, which is the practice of breath regulation.</p>
+</div>
 <div class="base-timer" onclick="startTimer()">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
@@ -32,7 +22,7 @@
       <path
               id="base-timer-path-remaining"
               stroke-dasharray="283"
-              class="base-timer__path-remaining ${remainingPathColor}"
+              class="base-timer__path-remaining"
               d="
           M 50, 50
           m -45, 0
