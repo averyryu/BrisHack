@@ -76,8 +76,9 @@ p {
     font-size: 18px;
 }
 
-.menu-sidebar ul li a:hover {
-    color: #007bff;
+.menu-sidebar ul li:hover {
+    background-color: #66666651;
+    color: #fff;
 }
 
 .back-button {
