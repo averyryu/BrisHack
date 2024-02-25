@@ -3,64 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toolsstyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="responses" href="responses.js">
     <title>Color Selector</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .color-button {
-            width: 250px;
-            height: 180px;
-            margin: 20px;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            border-radius: 5px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-            font-family: 'Dongle', sans-serif;
-        }
-
-        #button1 {
-            background-color: #D9D9D9;
-        }
-
-        #button2 {
-            background-color: #D9D9D9;
-        }
-
-        #button3 {
-            background-color: #D9D9D9;
-        }
-
-        #button4 {
-            background-color: #D9D9D9;
-        }
-
-        #sentence {
-            margin-bottom: 20px;
-            font-size: 30px;
-            font-family: 'Dongle', sans-serif;
-        }
-    </style>
 </head>
 <body>
+<div class="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+<div class="menu-sidebar" id="menuSidebar">
+    <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+    <ul>
+        <li><a href="index.html">Check in</a></li>
+        <li><a href="toolPage.html">Tools</a></li>
+        <li><a href="#">Analyse/Calendar</a></li>
+        <li><a href="#">Get Help</a></li>
+    </ul>
+</div>
 
     <p id="sentence">Tools Page</p>
 
@@ -73,6 +35,6 @@
         <a href="page3.html" id="button3" class="color-button">Emotion</a>
         <a href="page4.html" id="button4" class="color-button">Affirmation</a>
     </div>
-
+<script src="responses.js"></script>
 </body>
 </html>

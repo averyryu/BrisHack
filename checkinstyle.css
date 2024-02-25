@@ -26,8 +26,9 @@ body {
     color: black;
 }
 .cancel-button:hover {
-    background-color: lightgray;
-    border-radius: 5px;
+    /* background-color: lightgray;
+    border-radius: 5px; */
+    text-decoration: underline;
 }
 .button-container {
     display: flex;
@@ -36,8 +37,8 @@ body {
 }
 
 .color-button {
-    width: 250px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     margin: 20px;
     border: none;
     cursor: pointer;
@@ -49,7 +50,7 @@ body {
     justify-content: center;
     color: white;
     font-size: 20px;
-    font-family: 'Dongle', sans-serif;
+    font-family: Georgia, serif;
     text-align: center;
 }
 
@@ -57,20 +58,33 @@ body {
     background-color: #DE0F3F;
 }
 
+#button1:hover {
+    background-color: #b41339;
+}
+
 #button2 {
     background-color: #7BB7E0;
+}
+#button2:hover {
+    background-color: #6a9bbc;
 }
 
 #button3 {
     background-color: #6AC66B;
 }
+#button3:hover {
+    background-color: #5bab5d;
+}
 
 #button4 {
     background-color: #FFCF60;
+}
+#button4:hover {
+    background-color: #ecc058;
 }
 
 #sentence {
     margin-bottom: 20px;
     font-size: 30px;
-    font-family: 'Dongle', sans-serif;
+    font-family: serif;
 }
