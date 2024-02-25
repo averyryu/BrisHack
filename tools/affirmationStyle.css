@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#quote-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.quote-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.quote-card p {
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.swipe-left, .swipe-right {
+    position: absolute;
+    font-size: 12px; /* Adjust font size */
+    color: #888;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.swipe-left::before,
+.swipe-right::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px; /* Adjust the size of the circle */
+    height: 30px; /* Adjust the size of the circle */
+    border-radius: 50%; /* Make the border a circle */
+    border: 2px solid #888; /* Set border properties */
+    box-sizing: border-box; /* Ensure border is included in the dimensions */
+    z-index: -1; /* Place the circle behind the text */
+}
+
+.swipe-left {
+    right: calc(50% + 180px); /* Adjust horizontal position */
+    top: 40%; /* Adjust vertical position */
+}
+
+.swipe-right {
+    left: calc(50% + 180px); /* Adjust horizontal position */
+    top: 40%; /* Adjust vertical position */
+}
+
+#quote-container .swipe-left:hover::before,
+#quote-container .swipe-right:hover::before {
+    border-color: #333; /* Change border color on hover */
+}
