@@ -11,7 +11,7 @@ body, html {
 }
 /* Add your custom styles here */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     background-color: #f2f2f2;
 }
 
@@ -103,7 +103,7 @@ p {
 }
 
 .checkin-button {
-    background-color: #007bff; /* Blue color */
+    background-color: #575b5f; /* Blue color */
     color: #fff; /* Text color */
     font-size: 100px;
     width: 100px;
@@ -111,12 +111,12 @@ p {
     border-radius: 50%; /* Round background */
     border: none;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .checkin-text {
     font-size: 36px;
     font-weight: bold;
-    color: #333; /* Text color */
+    color: #1C2120; /* Text color */
     margin: 0;
 }
