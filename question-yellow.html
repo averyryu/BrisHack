@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="questionstyle.css">
+    <link rel="stylesheet" href="checkinstyle.css">
+    <title>Journaling Time</title>
+    <style>
+        .button {
+            border: 2px solid #ccc; /* Default border color */
+        }
+
+        .button.clicked {
+            border-color: #FFCF60; /* Change to your desired color when clicked */
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="emotion-yellow.html" class="back-button">&#x2B05;</a>
+
+    <a href="index.html" class="cancel-button">Cancel</a>
+    <h2>
+        <div style="text-align: center;">What were you doing when you feel such way?</div>
+        <br>
+    </h2>
+
+
+    <div class="Question">
+        <div class="question1">
+            <p>
+                <div style="text-align: center;">People</div>
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <button class="button" onclick="handleButtonClick(this, 'people')">By yourself</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Co-worker</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Pets</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Family</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Friends</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">+</button>
+        </div>
+        <br><br>
+        <div class="question2">
+            <p>
+                <div style="text-align: center;">Places</div>
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <button class="button" onclick="handleButtonClick(this, 'places')">Home</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">School</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Outside</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Commuting</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Work</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">+</button>
+        </div>
+        <br><br>
+        <div class="question3">
+            <p>
+                <div style="text-align: center;">Events</div>
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <button class="button" onclick="handleButtonClick(this, 'events')">Resting</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Driving</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Working</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Hanging Out</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Eating</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Hobbie</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">+</button>
+        </div>
+    </div>
+
+    <div class="Next">
+        <a href="journal.html" class="next-button">&#8594;</a>
+    </div>
+
+    <script>
+        function handleButtonClick(button, category) {
+            // Remove 'clicked' class from all buttons in the same category
+            var buttonsInCategory = document.querySelectorAll('.button.' + category);
+            buttonsInCategory.forEach(function (btn) {
+                btn.classList.remove('clicked');
+            });
+
+            // Add 'clicked' class to the clicked button
+            button.classList.add('clicked');
+        }
+    </script>
+</body>
+
+</html>

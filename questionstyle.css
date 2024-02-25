@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    padding: 20px;
+}
+
 .button {
     padding: 10px 20px;
     color: #000; /* Change text color to black */
@@ -7,16 +16,41 @@
     background-color: transparent; /* Set background color to transparent */
 }
 
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    font-size: 36px;
+    text-decoration: none;
+    color: black
+}
+.back-button:hover {
+    background-color: lightgray;
+}
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+.cancel-button:hover {
+    /* background-color: lightgray;
+    border-radius: 5px; */
+    text-decoration: underline;
+}
+
 .button.selected {
     background-color: #ff0000; /* Change background color to red for selected button */
 }
 
 .next-button {
     position: absolute;
-    bottom: 0;
-    border: 1px solid #000; /* Add border style */
-    right: 0;
+    bottom: 10px;
+    right: 10px;
     margin: 20px;
     padding: auto;
-    border-radius: 50%; /* Add border-radius to make it round */
+    text-decoration: none;
+    font-size: 36px;
 }
