@@ -2,31 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkinstyle.css">
+    <title>High Energy, Low Pleasantness</title>
     <style>
-        .button {
-            height: 50px;
-            width: 50px;
-            background-color: red;
-            border: none;
-            color: white;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
+
     </style>
 </head>
 <body>
-<button id="button1" class="button"></button>
-<button id="button2" class="button"></button>
-<button id="button3" class="button"></button>
-<button id="button4" class="button"></button>
+
+<p id="sentence">Which one describe what you are feeling the best?</p>
+
+<div class="button-container">
+    <a href="page1.html" id="button1" class="color-button">Angry</a>
+    <a href="page2.html" id="button2" class="color-button">Nervous</a>
+</div>
+
+<div class="button-container">
+    <a href="page3.html" id="button3" class="color-button">Anxious</a>
+    <a href="page4.html" id="button4" class="color-button">Uneasy</a>
+</div>
+
 </body>
 </html>
