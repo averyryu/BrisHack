@@ -9,7 +9,7 @@
         .button {
             border: 2px solid #ccc; /* Default border color */
         }
-        
+
         .button.clicked {
             border-color: #ff0000; /* Change to your desired color when clicked */
         }
@@ -32,12 +32,12 @@
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button" onclick="handleButtonClick(this)">By yourself</button>
-            <button class="button" onclick="handleButtonClick(this)">Co-worker</button>
-            <button class="button" onclick="handleButtonClick(this)">Pets</button>
-            <button class="button" onclick="handleButtonClick(this)">Family</button>
-            <button class="button" onclick="handleButtonClick(this)">Friends</button>
-            <button class="button" onclick="handleButtonClick(this)">+</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">By yourself</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Co-worker</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Pets</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Family</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">Friends</button>
+            <button class="button" onclick="handleButtonClick(this, 'people')">+</button>
         </div>
         <br><br>
         <div class="question2">
@@ -46,12 +46,12 @@
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button" onclick="handleButtonClick(this)">Home</button>
-            <button class="button" onclick="handleButtonClick(this)">School</button>
-            <button class="button" onclick="handleButtonClick(this)">Outside</button>
-            <button class="button" onclick="handleButtonClick(this)">Commuting</button>
-            <button class="button" onclick="handleButtonClick(this)">Work</button>
-            <button class="button" onclick="handleButtonClick(this)">+</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Home</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">School</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Outside</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Commuting</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">Work</button>
+            <button class="button" onclick="handleButtonClick(this, 'places')">+</button>
         </div>
         <br><br>
         <div class="question3">
@@ -60,13 +60,13 @@
             </p>
         </div>
         <div style="text-align: center;">
-            <button class="button" onclick="handleButtonClick(this)">Resting</button>
-            <button class="button" onclick="handleButtonClick(this)">Driving</button>
-            <button class="button" onclick="handleButtonClick(this)">Working</button>
-            <button class="button" onclick="handleButtonClick(this)">Hanging Out</button>
-            <button class="button" onclick="handleButtonClick(this)">Eating</button>
-            <button class="button" onclick="handleButtonClick(this)">Hobbie</button>
-            <button class="button" onclick="handleButtonClick(this)">+</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Resting</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Driving</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Working</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Hanging Out</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Eating</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Hobbie</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">+</button>
         </div>
     </div>
 
@@ -77,10 +77,10 @@
     </div>
 
     <script>
-        function handleButtonClick(button) {
-            // Remove 'clicked' class from all buttons
-            var allButtons = document.querySelectorAll('.button');
-            allButtons.forEach(function (btn) {
+        function handleButtonClick(button, category) {
+            // Remove 'clicked' class from all buttons in the same category
+            var buttonsInCategory = document.querySelectorAll('.button.' + category);
+            buttonsInCategory.forEach(function (btn) {
                 btn.classList.remove('clicked');
             });
 
