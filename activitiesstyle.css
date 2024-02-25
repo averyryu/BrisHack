@@ -1,0 +1,57 @@
+body {
+    font-family: Georgia, serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#activityInput {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+    /* border-radius: 10%;  */
+    font-family: Georgia, serif;
+}
+
+#recordButton {
+    background-color: #6acd90; /* Blue color */
+    border: none;
+    color: #fff; /* Text color */
+    padding: 10px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    /* border-radius: 20%;  */
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#showActivitiesButton {
+    background-color: #7cacdc; /* Blue color */
+    border: none;
+    color: #fff; /* Text color */
+    padding: 10px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    /* border-radius: 20%;  */
+    margin-top: 10px;
+
+}
+
+#activityList {
+    margin-top: 20px;
+    text-align: left;
+    font-family: Georgia, serif;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    font-size: 36px;
+    text-decoration: none;
+    color: black
+}
+.back-button:hover {
+    background-color: lightgray;
+}

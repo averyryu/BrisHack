@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="activitiesstyle.css">
     <title>Activity Recorder</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        #activityInput {
-            width: 300px;
-            padding: 8px;
-            margin-right: 10px;
-            font-family: Georgia, serif;
-        }
-
-        #recordButton, #showActivitiesButton {
-            padding: 10px;
-            cursor: pointer;
-            font-family: Georgia, serif;
-        }
-
-        #activityList {
-            margin-top: 20px;
-            text-align: left;
-            font-family: Georgia, serif;
-        }
-    </style>
 </head>
+
 <body>
-
+    <a href="toolPage.html" class="back-button">&#x2B05;</a>
     <h2>Activity Recorder</h2>
-
-    <label for="activityInput">Record an Activity:</label>
-    <input type="text" id="activityInput" placeholder="Enter your activity">
+    <p>
+        <i>
+            <div style="text-align: center;">We recommend being active to help you release your emotions! </div>
+        </i>
+    </p>
+    <!-- <label for="activityInput">Record an Activity:</label> -->
+    <input type="text" id="activityInput" placeholder="Enter your activity"><br>
     <button id="recordButton" onclick="recordActivity()">Record</button>
     <button id="showActivitiesButton" onclick="showActivities()">Show Activities</button>
 
@@ -92,4 +73,5 @@
     </script>
 
 </body>
+
 </html>
