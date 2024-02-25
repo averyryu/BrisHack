@@ -4,44 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Mood Tracker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        #calendar {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        #moodForm {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        select {
-            width: 200px;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="responses" href="responses.js">
+    <link rel="stylesheet" href="calendarstyle.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 </head>
 <body>
 
 <h2>Real-Time Mood Tracker</h2>
-
+<div class="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+<div class="menu-sidebar" id="menuSidebar">
+    <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+    <ul>
+        <li><a href="index.html">Check in</a></li>
+        <li><a href="toolPage.html">Tools</a></li>
+        <li><a href="calendar.html">Analyse/Calendar</a></li>
+        <li><a href="getHelp.html">Get Help</a></li>
+    </ul>
+</div>
 <div id="moodForm">
     <label for="moodSelect">How's your mood today?</label>
     <select id="moodSelect">
@@ -125,6 +109,6 @@
         };
     });
 </script>
-
+<script src="responses.js"></script>
 </body>
 </html>
