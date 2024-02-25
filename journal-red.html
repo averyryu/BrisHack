@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="journalstyle.css">
+<link rel="stylesheet" href="journalstyle.css">
+
 <head>
     <title>Journaling Page</title>
 </head>
+
 <body>
     <a href="question-red.html" class="back-button">&#x2B05;</a>
     <a href="index.html" class="cancel-button">Cancel</a>
@@ -22,4 +24,23 @@
         <button type="submit">Save</button>
     </div>
 </body>
+<script src="moodTracker.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const saveButton = document.querySelector('.Submit button');
+
+        saveButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const feeling = document.getElementById('feeling').value;
+            const image = document.getElementById('image').value; // Assuming you want to store the image path
+            const description = ''; // You can get the description from the user input field
+
+            saveMoodData(feeling, image, description);
+
+            // Add any additional logic or redirection if needed
+        });
+    });
+</script>
+
 </html>

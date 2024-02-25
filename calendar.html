@@ -1,91 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Mood Tracker</title>
     <link rel="responses" href="responses.js">
-    <link rel="stylesheet" href="calendarstyle.css"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="calendarstyle.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 </head>
+
 <body>
 
-<h2>Real-Time Mood Tracker</h2>
-<div class="menu-icon" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-</div>
-<div class="menu-sidebar" id="menuSidebar">
-    <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
-    <ul>
-        <li><a href="index.html">Check in</a></li>
-        <li><a href="toolPage.html">Tools</a></li>
-        <li><a href="calendar.html">Analyse/Calendar</a></li>
-        <li><a href="getHelp.html">Get Help</a></li>
-    </ul>
-</div>
+    <h2>Real-Time Mood Tracker</h2>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="menu-sidebar" id="menuSidebar">
+        <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+        <ul>
+            <li><a href="index.html">Check in</a></li>
+            <li><a href="toolPage.html">Tools</a></li>
+            <li><a href="calendar.html">Analyse/Calendar</a></li>
+            <li><a href="getHelp.html">Get Help</a></li>
+        </ul>
+    </div>
 
 
-<div id="calendar"></div>
+    <div id="calendar"></div>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        var calendar = $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay'
-            },
-            events: [],
-            timeFormat: 'HH:mm'
-        });
+    <script src="responses.js"></script>
+    <script>
+        $(document).ready(function () {
+            var calendar = $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: getMoodDataForCalendar(), // Call the function to get mood data
+                timeFormat: 'HH:mm'
+            });
 
+            function getMoodDataForCalendar() {
+                // Retrieve mood data from local storage
+                const moodData = JSON.parse(localStorage.getItem('moodData')) || [];
 
-        setInterval(updateRealTimeMood, 60000); // Update mood every minute
-        let currentMoment = moment();
-
-        function updateRealTimeMood() {
-            var moodSelect = $('#moodSelect');
-            var selectedMood = moodSelect.val();
-
-            if (selectedMood === 'other') {
-                // Do not update for custom mood
-                return;
+                // Transform mood data into events format for FullCalendar
+                return moodData.map(entry => ({
+                    title: entry.feeling,
+                    start: entry.timestamp, // Use timestamp as the event start time
+                    // Add any other event properties you want to display
+                }));
             }
+        });
+    </script>
 
-            var moodEvent = {
-                title: selectedMood,
-                start: currentMoment,
-                allDay: false,
-                color: moodSelect.find('option:selected').css('background-color')
-            };
-
-            // Add the mood event to the calendar
-            calendar.fullCalendar('renderEvent', moodEvent, true);
-        }
-
-        window.trackMood = function () {
-            var moodSelect = $('#moodSelect');
-            var selectedMood = moodSelect.val();
-
-            var moodEvent = {
-                title: selectedMood,
-                start: currentMoment,
-                allDay: false,
-                color: moodSelect.find('option:selected').css('background-color')
-            };
-
-            // Add the mood event to the calendar
-            calendar.fullCalendar('renderEvent', moodEvent, true);
-        };
-    });
-</script>
-<script src="responses.js"></script>
 </body>
+
 </html>

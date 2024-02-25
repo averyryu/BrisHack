@@ -26,7 +26,6 @@
         <br>
     </h2>
 
-
     <div class="Question">
         <div class="question1">
             <p>
@@ -67,25 +66,35 @@
             <button class="button" onclick="handleButtonClick(this, 'events')">Working</button>
             <button class="button" onclick="handleButtonClick(this, 'events')">Hanging Out</button>
             <button class="button" onclick="handleButtonClick(this, 'events')">Eating</button>
-            <button class="button" onclick="handleButtonClick(this, 'events')">Hobbie</button>
+            <button class="button" onclick="handleButtonClick(this, 'events')">Hobby</button>
             <button class="button" onclick="handleButtonClick(this, 'events')">+</button>
         </div>
     </div>
 
     <div class="Next">
-        <a href="journal-blue.html" class="next-button">&#8594;</a>
+        <a href="#" class="next-button" onclick="redirectToJournal()">Next &#8594;</a>
     </div>
 
     <script>
+        var selectedOptions = {
+            'people': '',
+            'places': '',
+            'events': '',
+        };
+
         function handleButtonClick(button, category) {
-            // Remove 'clicked' class from all buttons in the same category
             var buttonsInCategory = document.querySelectorAll('.button.' + category);
             buttonsInCategory.forEach(function (btn) {
                 btn.classList.remove('clicked');
             });
 
-            // Add 'clicked' class to the clicked button
             button.classList.add('clicked');
+            selectedOptions[category] = button.textContent.trim();
+        }
+
+        function redirectToJournal() {
+            const url = `journal-blue.html?people=${selectedOptions.people}&places=${selectedOptions.places}&events=${selectedOptions.events}`;
+            window.location.href = url;
         }
     </script>
 </body>

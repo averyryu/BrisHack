@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="journalstyle.css">
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journaling Page</title>
+    <link rel="stylesheet" href="journalstyle.css">
 </head>
+
 <body>
     <a href="question-blue.html" class="back-button">&#x2B05;</a>
     <a href="index.html" class="cancel-button">Cancel</a>
+
+    <h2>Journal Entry</h2>
+
+    <div id="entry-details">
+        <h4>Details:</h4>
+        <p id="people">People: </p>
+        <p id="places">Places: </p>
+        <p id="events">Events: </p>
+    </div>
 
     <form>
         <label for="feeling">How do you feel today?</label>
@@ -14,12 +27,61 @@
 
         <label for="image">Upload an image:</label>
         <input type="file" id="image" name="image">
-
     </form>
 
-    <h4> Describe what might be causing you to feel such way ...</h4>
+    <h4>Describe what might be causing you to feel such a way...</h4>
+    <textarea id="description" rows="4"></textarea>
+
     <div class="Submit">
-        <button type="submit">Save</button>
+        <button type="button" onclick="saveMoodData()">Save</button>
     </div>
+
+    <script>
+        function saveMoodData() {
+            const feeling = document.getElementById('feeling').value;
+            const image = document.getElementById('image').value; // Assuming you want to store the image path
+            const description = document.getElementById('description').value;
+
+            // Get selected options from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const peopleOption = urlParams.get('people');
+            const placesOption = urlParams.get('places');
+            const eventsOption = urlParams.get('events');
+
+            // Display selected options
+            document.getElementById('people').innerText = `People: ${peopleOption}`;
+            document.getElementById('places').innerText = `Places: ${placesOption}`;
+            document.getElementById('events').innerText = `Events: ${eventsOption}`;
+
+            // Save mood data, including the selected options
+            saveMoodDataToLocal(feeling, image, description, peopleOption, placesOption, eventsOption);
+
+            // Add any additional logic or redirection if needed
+        }
+
+        function saveMoodDataToLocal(feeling, image, description, people, places, events) {
+            const timestamp = new Date().toISOString();
+            const existingData = JSON.parse(localStorage.getItem('moodData'))
+            // If there's no existing data, initialize an empty array
+            const moodData = existingData || [];
+
+            // Add the new mood entry
+            moodData.push({
+                timestamp,
+                feeling,
+                image,
+                description,
+                people,
+                places,
+                events,
+            });
+
+            // Save the updated mood data to local storage
+            localStorage.setItem('moodData', JSON.stringify(moodData));
+
+            // Redirect or perform any additional logic as needed
+        }
+    </script>
 </body>
+
 </html>
