@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="getHelpStyle.css">
+    <link rel="responses" href="responses.js">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +10,21 @@
 </head>
 
 <body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="menu-sidebar" id="menuSidebar">
+        <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+        <ul>
+            <li><a href="index.html">Check-in</a></li>
+            <li><a href="toolPage.html">Tools</a></li>
+            <li><a href="calendar.html">Analyse/Calendar</a></li>
+            <li><a href="getHelp.html">Get Help</a></li>
+        </ul>
+    </div>
+
     <h1>
         <div style="text-align: center;">Get Help</div>
     </h1>
@@ -21,46 +38,7 @@
             </div>
         </i>
     </p>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .color-button {
-            width: 200px;
-            height: 80px;
-            margin: 20px;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            border-radius: 5px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
-        }
-
-        #button1 {
-            background-color: #D9D9D9;
-        }
-
-        #button2 {
-            background-color: #D9D9D9;
-        }
-
-    </style>
     </head>
 
     <body>
@@ -70,5 +48,7 @@
             <a href="" id="button2" class="color-button"><i><b>Mental health helpline</b></i></a>
         </div>
     </body>
+
+    <script src="responses.js"></script>
 
 </html>
