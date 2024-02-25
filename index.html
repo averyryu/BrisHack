@@ -11,10 +11,20 @@
 </head>
 <body>
     <!-- Add your HTML content here -->
-    <div class="menu-icon">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
+    <div class="menu-sidebar" id="menuSidebar">
+        <button class="back-button" onclick="toggleMenu()">&#x2B05;</button>
+        <ul>
+            <li><a href="#">Check in</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Analyse/Calendar</a></li>
+            <li><a href="#">Get Help</a></li>
+        </ul>
+    </div>
+    <script src="responses.js"></script>
 </body>
 </html>

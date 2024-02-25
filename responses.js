@@ -1,4 +1,4 @@
-document.querySelector('.menu-icon').addEventListener('click', function() {
-    this.classList.toggle('open');
-    // Add functionality to expand/collapse your menu here
-});
+function toggleMenu() {
+    var menuSidebar = document.getElementById("menuSidebar");
+    menuSidebar.classList.toggle("show");
+}
