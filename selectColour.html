@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selector</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .color-button {
+            width: 250px;
+            height: 180px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            font-family: 'Dongle', sans-serif;
+        }
+
+        #button1 {
+            background-color: red;
+        }
+
+        #button2 {
+            background-color: blue;
+        }
+
+        #button3 {
+            background-color: green;
+        }
+
+        #button4 {
+            background-color: yellow;
+        }
+
+        #sentence {
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-family: 'Dongle', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="sentence">Choose the colour that reflects your mood today.</p>
+
+    <div class="button-container">
+        <a href="page1.html" id="button1" class="color-button">Red</a>
+        <a href="page2.html" id="button2" class="color-button">Blue</a>
+    </div>
+
+    <div class="button-container">
+        <a href="page3.html" id="button3" class="color-button">Green</a>
+        <a href="page4.html" id="button4" class="color-button">Yellow</a>
+    </div>
+
+</body>
+</html>
