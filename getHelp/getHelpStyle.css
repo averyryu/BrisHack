@@ -4,7 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
+    margin: 30px;
 }
 
 .button-container {
@@ -32,8 +32,18 @@ body {
     background-color: #D9D9D9;
 }
 
+#button1:hover {
+    background-color: #6AC66B;
+    color: #fff;
+}
+
 #button2 {
     background-color: #D9D9D9;
+}
+
+#button2:hover {
+    background-color: #DE0F3F;
+    color: #fff;
 }
 
         
