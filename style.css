@@ -5,7 +5,10 @@ body, h1, p {
     margin: 0;
     padding: 0;
 }
-
+body, html {
+    height: 100%;
+    margin: 0;
+}
 /* Add your custom styles here */
 body {
     font-family: Arial, sans-serif;
@@ -89,4 +92,31 @@ p {
 
 .back-button:hover {
     background-color: lightgray;
+}
+
+.checkin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.checkin-button {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* Text color */
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Round background */
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.checkin-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333; /* Text color */
+    margin: 0;
 }
