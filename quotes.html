@@ -39,34 +39,47 @@
 
         .swipe-left, .swipe-right {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.5em;
+            font-size: 12px; /* Adjust font size */
             color: #888;
             cursor: pointer;
             z-index: 2;
         }
 
-        .swipe-left {
+        .swipe-left::before,
+        .swipe-right::before {
+            content: "";
             position: absolute;
-            right: calc(50% + 180px);
-            top: 260px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px; /* Adjust the size of the circle */
+            height: 30px; /* Adjust the size of the circle */
+            border-radius: 50%; /* Make the border a circle */
+            border: 2px solid #888; /* Set border properties */
+            box-sizing: border-box; /* Ensure border is included in the dimensions */
+            z-index: -1; /* Place the circle behind the text */
+        }
+
+        .swipe-left {
+            right: calc(50% + 180px); /* Adjust horizontal position */
+            top: 40%; /* Adjust vertical position */
         }
 
         .swipe-right {
-            position: absolute;
-            left: calc(50% + 180px);
-            top: 260px;
+            left: calc(50% + 180px); /* Adjust horizontal position */
+            top: 40%; /* Adjust vertical position */
         }
 
-        #quote-container .swipe-left:hover, #quote-container .swipe-right:hover {
-            color: #333;
+        #quote-container .swipe-left:hover::before,
+        #quote-container .swipe-right:hover::before {
+            border-color: #333; /* Change border color on hover */
         }
+
     </style>
 </head>
 <body>
 
-<h2>Tinder Swipe UI</h2>
+<h2>Affirmation</h2>
 
 <div id="quote-container">
     <div class="quote-card" id="quoteCard-next">
@@ -79,7 +92,7 @@
 </div>
 
 <div>
-    <div class="swipe-left" onclick="swipe('left')" style="font-size: 12px;">previous</div>
+    <div class="swipe-left" onclick="swipe('left')" style="font-size: 12px;">prev</div>
     <div class="swipe-right" onclick="swipe('right')" style="font-size: 12px;">next</div>
 </div>
 
