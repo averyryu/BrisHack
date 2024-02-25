@@ -36,7 +36,7 @@
             cursor: pointer;
         }
     </style>
-    <link rel="stylesheet" href=".idea/lib/fullcalendar.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
 </head>
 <body>
 
@@ -69,12 +69,12 @@
 
 <div id="calendar"></div>
 
-<script src=".idea/lib/jquery-3.6.4.min.js"></script>
-<script src=".idea/lib/moment.min.js"></script>
-<script src=".idea/lib/fullcalendar.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 
 <script>
-    jQuery(document).ready(function ($) {
+    $(document).ready(function () {
         var calendar = $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -114,7 +114,7 @@
 
             var moodEvent = {
                 title: selectedMood,
-                start: moment(currentMoment.format('YYYY-MM-DD') + ' ' + currentTime),
+                start: moment(),
                 allDay: false,
                 color: moodSelect.find('option:selected').css('background-color')
             };
