@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="quotestyle.css">
-    <title>Tinder Swipe UI</title>
+
+    <link rel="stylesheet" href="checkinstyle.css">
+    <title>Affirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            font-family: Georgia, serif;
+        }
+    </style>
 </head>
+
 <body>
-<a href="toolPage.html" class="back-button">&#x2B05;</a>
-<h2>Affirmation</h2>
 
-<div id="quote-container">
-    <div class="quote-card" id="quoteCard-next">
-        <p>I am in the right place at the right time, doing the right thing. -Louise Hay</p>
+    <a href="toolPage.html" class="back-button">&#x2B05;</a>
+
+    <h2>Affirmation</h2>
+
+    <div id="quote-container">
+        <div class="quote-card" id="quoteCard-next">
+            <p><i>Believe you can and you're halfway there. </i><br><br>- Theodore Roosevelt</p>
+        </div>
+        <div class="quote-card" id="quoteCard">
+            <p><i>Believe you can and you're halfway there. </i><br><br>- Theodore Roosevelt</p>
+        </div>
+
     </div>
-    <div class="quote-card" id="quoteCard">
-        <p>I am in the right place at the right time, doing the right thing. -Louise Hay</p>
+
+    <div>
+        <div class="swipe-left" onclick="swipe('left')" style="font-size: 12px;">prev</div>
+        <div class="swipe-right" onclick="swipe('right')" style="font-size: 12px;">next</div>
+
     </div>
 
-</div>
 
-<div>
-    <div class="swipe-left" onclick="swipe('left')" style="font-size: 12px;">prev</div>
-    <div class="swipe-right" onclick="swipe('right')" style="font-size: 12px;">next</div>
-</div>
 
+    <script>
+        const quoteCard = document.getElementById('quoteCard');
+        const quoteCard_next = document.getElementById('quoteCard-next')
+        // const swipeLeft = document.querySelector('.swipe-left');
+        // const swipeRight = document.querySelector('.swipe-right');
+        
+        const quotes = [
+            "<i>Your time is limited, don't waste it living someone else's life.  </i><br><br>- Steve Jobs",
+            "<i>The only way to do great work is to love what you do. </i><br><br>- Steve Jobs",
+            "<i>Success is not final, failure is not fatal: It is the courage to continue that counts. </i><br><br>- Winston Churchill",
+            "<i>The only place where success comes before work is in the dictionary. </i><br><br>- Vidal Sassoon",
+            "<i>The future belongs to those who believe in the beauty of their dreams.  </i><br><br>- Eleanor Roosevelt",
+            "<i>Don’t watch the clock; do what it does. Keep going. </i><br><br>- Sam Levenson",
+            "<i>You are never too old to set another goal or to dream a new dream. </i><br><br>- C.S. Lewis",
+            "<i>The only limit to our realization of tomorrow will be our doubts of today. </i><br><br>- Franklin D. Roosevelt",
+            "<i>Your attitude, not your aptitude, will determine your altitude. </i><br><br>- Zig Ziglar"
+            // Add more quotes as needed
+        ];
+
+        let currentQuoteIndex = 0;
+
+        function swipe(direction) {
+            if (direction === 'left') {
+                loadPreviousQuote();
+            } else if (direction === 'right') {
+                loadNextQuote();
+            }
+        }
+
+        function changeOpacity(timestamp, startOpacity, endOpacity, startTime) {
+            let duration = 300;
+            let progress = timestamp - startTime; // Calculate the progress based on the startTime
+            let opacity = startOpacity + (endOpacity - startOpacity) * progress / duration;
+            quoteCard.style.opacity = opacity;
+            if (progress < duration) {
+                requestAnimationFrame(timestamp => changeOpacity(timestamp, startOpacity, endOpacity, startTime));
+            }
+        }
 
 
 <script>
@@ -46,70 +100,51 @@
         // Add more quotes as needed
     ];
 
-    let currentQuoteIndex = 0;
-
-    function swipe(direction) {
-        if (direction === 'left') {
-            loadPreviousQuote();
-        } else if (direction === 'right') {
-            loadNextQuote();
-        }
-    }
-
-    function changeOpacity(timestamp, startOpacity, endOpacity, startTime) {
-        let duration = 300;
-        let progress = timestamp - startTime; // Calculate the progress based on the startTime
-        let opacity = startOpacity + (endOpacity - startOpacity) * progress / duration;
-        quoteCard.style.opacity = opacity;
-        if (progress < duration) {
-            requestAnimationFrame(timestamp => changeOpacity(timestamp, startOpacity, endOpacity, startTime));
-        }
-    }
 
 
 
+        function loadPreviousQuote() {
+            quoteCard.style.opacity = "0"
+            quoteCard.style.transform = 'translateX(-100%) rotate(-13deg)';
 
-    function loadPreviousQuote() {
-        quoteCard.style.opacity = "0"
-        quoteCard.style.transform = 'translateX(-100%) rotate(-13deg)';
+            quoteCard_next.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+            currentQuoteIndex--;
 
-        quoteCard_next.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
-        currentQuoteIndex--;
-
-        // End over if reached the front
-        if (currentQuoteIndex < 0) {
-            currentQuoteIndex = quotes.length - 1;
-        }
-        quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
-
-        // Display the next quote
-        setTimeout(() => {
-            requestAnimationFrame(timestamp => changeOpacity(timestamp, 0, 1, performance.now()));
-            quoteCard.style.transform = 'rotate(0) translateX(0)';
-        }, 300);
-
-    }
-
-    function loadNextQuote() {
-        currentQuoteIndex++;
-
-        // Start over if reached the end
-        if (currentQuoteIndex >= quotes.length) {
-            currentQuoteIndex = 0;
-        }
-
-        // Display the next quote
-        quoteCard_next.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
-
-        quoteCard.style.transform = 'translateX(100%) rotate(13deg)';
-        requestAnimationFrame(timestamp => changeOpacity(timestamp, 1, 0, performance.now()));
-        setTimeout(() => {
-            quoteCard.style.transform = 'rotate(0) translateX(0)';
+            // End over if reached the front
+            if (currentQuoteIndex < 0) {
+                currentQuoteIndex = quotes.length - 1;
+            }
             quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
-            quoteCard.style.opacity = "1"
-        }, 300);
-    }
-</script>
+
+            // Display the next quote
+            setTimeout(() => {
+                requestAnimationFrame(timestamp => changeOpacity(timestamp, 0, 1, performance.now()));
+                quoteCard.style.transform = 'rotate(0) translateX(0)';
+            }, 300);
+
+        }
+
+        function loadNextQuote() {
+            currentQuoteIndex++;
+
+            // Start over if reached the end
+            if (currentQuoteIndex >= quotes.length) {
+                currentQuoteIndex = 0;
+            }
+
+            // Display the next quote
+            quoteCard_next.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+
+            quoteCard.style.transform = 'translateX(100%) rotate(13deg)';
+            requestAnimationFrame(timestamp => changeOpacity(timestamp, 1, 0, performance.now()));
+            setTimeout(() => {
+                quoteCard.style.transform = 'rotate(0) translateX(0)';
+                quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
+                quoteCard.style.opacity = "1"
+            }, 300);
+        }
+    </script>
 
 </body>
+
 </html>
