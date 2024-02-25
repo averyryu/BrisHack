@@ -1,0 +1,36 @@
+body {
+    font-family: Georgia, serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#activityInput {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+    font-family: Georgia, serif;
+}
+
+#recordButton, #showActivitiesButton {
+    padding: 10px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+}
+
+#activityList {
+    margin-top: 20px;
+    text-align: left;
+    font-family: Georgia, serif;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    font-size: 36px;
+    text-decoration: none;
+    color: black
+}
+.back-button:hover {
+    background-color: lightgray;
+}
