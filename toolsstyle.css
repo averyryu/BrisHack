@@ -25,25 +25,37 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgba(0, 0, 0, 0.7);
     font-size: 30px;
-    font-family: 'Dongle', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 #button1 {
-    background-color: #D9D9D9;
+    background-image: url('images/3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #button2 {
-    background-color: #D9D9D9;
+    background-image: url('images/4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #button3 {
-    background-color: #D9D9D9;
+    background-image: url('images/6.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #button4 {
-    background-color: #D9D9D9;
+    background-image: url('images/5.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #sentence {
