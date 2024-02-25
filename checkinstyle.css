@@ -1,0 +1,45 @@
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-button {
+    width: 250px;
+    height: 180px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Dongle', sans-serif;
+    text-align: center;
+}
+
+#button1 {
+    background-color: #DE0F3F;
+}
+
+#button2 {
+    background-color: #7BB7E0;
+}
+
+#button3 {
+    background-color: #6AC66B;
+}
+
+#button4 {
+    background-color: #FFCF60;
+}
+
+#sentence {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Dongle', sans-serif;
+}
