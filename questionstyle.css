@@ -1,0 +1,22 @@
+.button {
+    padding: 10px 20px;
+    color: #000; /* Change text color to black */
+    border: 1px solid #000; /* Add border style */
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent; /* Set background color to transparent */
+}
+
+.button.selected {
+    background-color: #ff0000; /* Change background color to red for selected button */
+}
+
+.next-button {
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #000; /* Add border style */
+    right: 0;
+    margin: 20px;
+    padding: auto;
+    border-radius: 50%; /* Add border-radius to make it round */
+}
