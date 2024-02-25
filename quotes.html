@@ -66,7 +66,7 @@
 </head>
 <body>
 
-    <h2>Tinder Swipe UI</h2>
+<h2>Tinder Swipe UI</h2>
 
 <div id="quote-container">
     <div class="quote-card" id="quoteCard">
@@ -74,14 +74,13 @@
     </div>
 </div>
 
-    <div>
-        <div class="swipe-left" onclick="swipe('left')"><</div>
-        <div class="swipe-right" onclick="swipe('right')">></div>
-    </div>
+<div>
+    <div class="swipe-left" onclick="swipe('left')"><</div>
+    <div class="swipe-right" onclick="swipe('right')">></div>
+</div>
 
 
 <script>
-    const quoteContainer = document.getElementById('quote-container');
     const quoteCard = document.getElementById('quoteCard');
     const swipeLeft = document.querySelector('.swipe-left');
     const swipeRight = document.querySelector('.swipe-right');
@@ -93,46 +92,46 @@
         // Add more quotes as needed
     ];
 
-        let currentQuoteIndex = 0;
+    let currentQuoteIndex = 0;
 
-        function swipe(direction) {
-            if (direction === 'left') {
-                quoteCard.style.transform = 'translateX(-100%) rotate(-20deg)';
-                swipeRight.style.opacity = '0';
-                setTimeout(() => {
-                    loadPreviousQuote();
-                    resetCard();
-                }, 300);
+    function swipe(direction) {
+        if (direction === 'left') {
+            quoteCard.style.transform = 'translateX(-100%) rotate(-20deg)';
+            swipeRight.style.opacity = '0';
+            setTimeout(() => {
+                loadPreviousQuote();
+                resetCard();
+            }, 300);
 
-            } else if (direction === 'right') {
-                quoteCard.style.transform = 'translateX(100%) rotate(20deg)';
-                swipeLeft.style.opacity = '0';
-                setTimeout(() => {
-                    loadNextQuote();
-                    resetCard();
-                }, 300);
-            }
+        } else if (direction === 'right') {
+            quoteCard.style.transform = 'translateX(100%) rotate(20deg)';
+            swipeLeft.style.opacity = '0';
+            setTimeout(() => {
+                loadNextQuote();
+                resetCard();
+            }, 300);
         }
+    }
 
-        function loadPreviousQuote() {
-            currentQuoteIndex--;
+    function loadPreviousQuote() {
+        currentQuoteIndex--;
 
-            // End over if reached the front
-            if (currentQuoteIndex < 0) {
-                currentQuoteIndex = quotes.length-1;
-            }
+        // End over if reached the front
+        if (currentQuoteIndex < 0) {
+            currentQuoteIndex = quotes.length - 1;
+        }
 
         // Display the next quote
         quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
     }
 
-        function loadNextQuote() {
-            currentQuoteIndex++;
+    function loadNextQuote() {
+        currentQuoteIndex++;
 
-            // Start over if reached the end
-            if (currentQuoteIndex >= quotes.length) {
-                currentQuoteIndex = 0;
-            }
+        // Start over if reached the end
+        if (currentQuoteIndex >= quotes.length) {
+            currentQuoteIndex = 0;
+        }
 
         // Display the next quote
         quoteCard.innerHTML = `<p>${quotes[currentQuoteIndex]}</p>`;
