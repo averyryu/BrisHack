@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Recorder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #activityInput {
+            width: 300px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        #recordButton, #showActivitiesButton {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #activityList {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Activity Recorder</h2>
+
+    <label for="activityInput">Record an Activity:</label>
+    <input type="text" id="activityInput" placeholder="Enter your activity">
+    <button id="recordButton" onclick="recordActivity()">Record</button>
+    <button id="showActivitiesButton" onclick="showActivities()">Show Activities</button>
+
+    <div id="activityList"></div>
+
+    <script>
+        function recordActivity() {
+            var activityInput = document.getElementById('activityInput');
+            var activity = activityInput.value.trim();
+
+            if (activity !== '') {
+                // Retrieve existing activities from localStorage
+                var existingActivities = JSON.parse(localStorage.getItem('activities')) || [];
+
+                // Add the new activity
+                existingActivities.push(activity);
+
+                // Store the updated activities back in localStorage
+                localStorage.setItem('activities', JSON.stringify(existingActivities));
+
+                // Display the updated activities immediately
+                showActivities();
+
+                // Clear the input field
+                activityInput.value = '';
+
+                alert('Activity recorded successfully!');
+            } else {
+                alert('Please enter a valid activity.');
+            }
+        }
+
+        function showActivities() {
+            // Retrieve activities from localStorage
+            var activities = JSON.parse(localStorage.getItem('activities')) || [];
+
+            // Display activities on the page
+            var activityList = document.getElementById('activityList');
+            activityList.innerHTML = '<h3>Recorded Activities:</h3>';
+
+            if (activities.length === 0) {
+                activityList.innerHTML += '<p>No activities recorded yet.</p>';
+            } else {
+                var ul = document.createElement('ul');
+                activities.forEach(function (activity) {
+                    var li = document.createElement('li');
+                    li.textContent = activity;
+                    ul.appendChild(li);
+                });
+                activityList.appendChild(ul);
+            }
+        }
+    </script>
+
+</body>
+</html>
