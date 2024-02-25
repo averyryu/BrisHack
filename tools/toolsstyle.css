@@ -31,28 +31,28 @@ body {
 }
 
 #button1 {
-    background-image: url('images/activities.png');
+    background-image: url('../images/activities.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #button2 {
-    background-image: url('images/breathe.png');
+    background-image: url('../images/breathe.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #button3 {
-    background-image: url('images/emotion101.png');
+    background-image: url('../images/emotion101.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #button4 {
-    background-image: url('images/affirmation.png');
+    background-image: url('../images/affirmation.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
