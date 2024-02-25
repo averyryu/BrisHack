@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,93 +77,31 @@
             var moodSelect = $('#moodSelect');
             var selectedMood = moodSelect.val();
 
-
-<body>
-    <a href="index.html" class="back-button">&#x2B05;</a>
-
-    <a href="index.html" class="cancel-button">Cancel</a>
-    <h2>Mood Tracker</h2>
-
-    <div id="moodForm">
-        <label for="moodSelect">How's your mood today?</label>
-        <select id="moodSelect">
-            <option value="happy" style="background-color: #FFCF60;">Happy</option>
-            <option value="energised" style="background-color: #FFCF60;">Energised</option>
-            <option value="motivated" style="background-color: #FFCF60;">Motivated</option>
-            <option value="focused" style="background-color: #FFCF60;">Focused</option>
-            <option value="chill" style="background-color: #6AC66B;">Chill</option>
-            <option value="calm" style="background-color: #6AC66B;">Calm</option>
-            <option value="cozy" style="background-color: #6AC66B;">Cozy</option>
-            <option value="grateful" style="background-color: #6AC66B;">Grateful</option>
-            <option value="angry" style="background-color: #DE0F3F;">Angry</option>
-            <option value="nervous" style="background-color: #DE0F3F;">Nervous</option>
-            <option value="anxious" style="background-color: #DE0F3F;">Anxious</option>
-            <option value="uneasy" style="background-color: #DE0F3F;">Uneasy</option>
-            <option value="sad" style="background-color: #7BB7E0;">Sad</option>
-            <option value="bored" style="background-color: #7BB7E0;">Bored</option>
-            <option value="discouraged" style="background-color: #7BB7E0;">Discouraged</option>
-            <option value="depressed" style="background-color: #7BB7E0;">Depressed</option>
-            <option value="other" style="background-color: #cccccc;">Other</option>
-        </select>
-
-        <button onclick="trackMood()">Track Mood</button>
-    </div>
-
-    <div id="calendar"></div>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            var calendar = $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                events: [],
-                timeFormat: 'HH:mm'
-            });
-
-
-            setInterval(updateRealTimeMood, 60000); // Update mood every minute
-            let currentMoment = moment();
-
-            function updateRealTimeMood() {
-                var moodSelect = $('#moodSelect');
-                var selectedMood = moodSelect.val();
-
-                if (selectedMood === 'other') {
-                    // Do not update for custom mood
-                    return;
-                }
-
-                var moodEvent = {
-                    title: selectedMood,
-                    start: currentMoment,
-                    allDay: false,
-                    color: moodSelect.find('option:selected').css('background-color')
-                };
-
-                // Add the mood event to the calendar
-                calendar.fullCalendar('renderEvent', moodEvent, true);
+            if (selectedMood === 'other') {
+                // Do not update for custom mood
+                return;
             }
 
-            window.trackMood = function () {
-                var moodSelect = $('#moodSelect');
-                var selectedMood = moodSelect.val();
+            var moodEvent = {
+                title: selectedMood,
+                start: currentMoment,
+                allDay: false,
+                color: moodSelect.find('option:selected').css('background-color')
+            };
 
-                var moodEvent = {
-                    title: selectedMood,
-                    start: currentMoment,
-                    allDay: false,
-                    color: moodSelect.find('option:selected').css('background-color')
-                };
+            // Add the mood event to the calendar
+            calendar.fullCalendar('renderEvent', moodEvent, true);
+        }
 
-                // Add the mood event to the calendar
-                calendar.fullCalendar('renderEvent', moodEvent, true);
+        window.trackMood = function () {
+            var moodSelect = $('#moodSelect');
+            var selectedMood = moodSelect.val();
+
+            var moodEvent = {
+                title: selectedMood,
+                start: currentMoment,
+                allDay: false,
+                color: moodSelect.find('option:selected').css('background-color')
             };
 
             // Add the mood event to the calendar
@@ -173,7 +110,5 @@
     });
 </script>
 <script src="responses.js"></script>
-
 </body>
-
 </html>
