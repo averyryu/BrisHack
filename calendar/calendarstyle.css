@@ -13,6 +13,10 @@ body {
     margin-top: 20px;
 }
 
+h2 {
+    font-family: serif;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -27,4 +31,72 @@ select {
 button {
     padding: 10px;
     cursor: pointer;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+.menu-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar initially hidden */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.menu-sidebar.show {
+    left: 0;
+}
+
+.menu-sidebar ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.menu-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.menu-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.menu-sidebar ul li:hover {
+    background-color: #66666651;
+    color: #fff;
+}
+
+.back-button {
+    margin: 20px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 36px;
+}
+
+.back-button:hover {
+    background-color: lightgray;
 }
