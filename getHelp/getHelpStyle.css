@@ -8,7 +8,7 @@ body {
 }
 
 .button-container {
-    display: block;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     float: left;
@@ -27,7 +27,7 @@ body {
     align-items: center;
     justify-content: center;
     color: black;
-    font-family: "Caveat", cursive;
+    font-family: serif;
     font-size: large;
     font-weight: bold;
 
