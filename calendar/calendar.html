@@ -26,7 +26,6 @@
     </ul>
 </div>
 
-
 <div id="calendar"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -58,6 +57,12 @@
                 color: '#3f51b5' // Set color as per your requirement
             };
             calendar.fullCalendar('renderEvent', moodEvent, true);
+        }
+
+        // Function to toggle menu
+        function toggleMenu() {
+            var menuSidebar = document.getElementById('menuSidebar');
+            menuSidebar.classList.toggle('open');
         }
     });
 </script>

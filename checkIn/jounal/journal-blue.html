@@ -5,30 +5,30 @@
     <link rel="stylesheet" href="journalstyle.css">
 </head>
 <body>
-    <a href="../question/question-blue.html" class="back-button">&#x2B05;</a>
-    <a href="../../index.html" class="cancel-button">Cancel</a>
+<a href="../question/question-blue.html" class="back-button">&#x2B05;</a>
+<a href="../../index.html" class="cancel-button">Cancel</a>
 
-    <form>
-        <label for="feeling">How do you feel today?</label>
-        <input type="text" id="feeling" name="feeling" required>
+<form>
+    <label for="feeling">How do you feel today?</label>
+    <input type="text" id="feeling" name="feeling" required>
 
-        <label for="image">Upload an image:</label>
-        <input type="file" id="image" name="image">
-
-    </form>
+    <label for="image">Upload an image:</label>
+    <input type="file" id="image" name="image">
+</form>
 
 <h4> Describe what might be causing you to feel such way ...</h4>
 <div class="Submit">
+    <!-- Added id="saveButton" to the button -->
     <button id="saveButton" type="button">Save</button>
 </div>
 
 <script>
     document.getElementById("saveButton").addEventListener("click", function() {
-        // Get the entered feeling
         var feeling = document.getElementById("feeling").value;
 
         // Redirect to calendar.html with feeling as parameter
-        window.location.href = "calendar.html?feeling=" + feeling;
+        // Append the selected mood to the URL
+        window.location.href = "calendar.html?feeling=" + encodeURIComponent(feeling);
     });
 </script>
 </body>
