@@ -19,7 +19,8 @@ h1{
 }
 
 .base-timer:hover::after{
-    content: "Click to start timer";
+    content: "Breathe according to this timer";
+    text-align: center;
     color: black;
     font-style: oblique;
     opacity: 50%;
@@ -76,23 +77,6 @@ h1{
     font-size: 48px;
 }
 
-.reset-timer-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Add cursor on hover */
-}
-
-.reset-timer-button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    color: white
-}
-
-
 .back-button {
     position: absolute;
     top: 10px; /* Adjust top position */
@@ -124,3 +108,8 @@ h1{
     line-height: 1.5;
     color: #333;
 }
+.base-timer__pointer {
+    transition: transform 1s linear; /* Smooth transition for pointer movement */
+    transform-origin: center;
+}
+

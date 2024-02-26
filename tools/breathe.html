@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timer</title>
   <link rel="stylesheet" href="breathestyle.css">
-  <link rel="responses" href="../responses.js">
+  <link rel="responses" href="breathescript.js">
 </head>
 <body>
 <a href="toolPage.html" class="back-button">&#x2B05;</a>
@@ -14,7 +14,7 @@
   <h2>4-7-8 Breathing Technique</h2>
   <p>The 4-7-8 breathing technique involves breathing in for 4 seconds, holding the breath for 7 seconds, and exhaling for 8 seconds. This breathing pattern aims to reduce anxiety or help people get to sleep. It is a form of pranayama, which is the practice of breath regulation.</p>
 </div>
-<div class="base-timer" onclick="startTimer()">
+<div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <g class="base-timer__circle">
       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
@@ -30,17 +30,10 @@
         "
       ></path>
     </g>
+    <circle id="pointer" class="base-timer__pointer" cx="50" cy="5" r="2" fill="black"></circle>
   </svg>
   <span id="base-timer-label" class="base-timer__label"></span>
 </div>
-<button id="reset-timer-button" onclick="resetTimer()">Reset Timer</button>
-<script src="../responses.js"></script>
-<script>
-  // Wait for the DOM content to load
-  document.addEventListener('DOMContentLoaded', function() {
-    // Set the initial text of the timer label
-    document.getElementById('base-timer-label').innerText = formatTime(timeLeft);
-  });
-</script>
+<script src="breathescript.js"></script>
 </body>
 </html>
