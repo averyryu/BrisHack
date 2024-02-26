@@ -23,12 +23,15 @@
 </div>
 
 <script>
+    // Add click event listener to the save button
     document.getElementById("saveButton").addEventListener("click", function() {
         var feeling = document.getElementById("feeling").value;
 
-        // Redirect to calendar.html with feeling as parameter
-        // Use a relative path to navigate to calendar.html
-        window.location.href = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling);
+        // Construct the URL with feeling as the first parameter and "blue" as the second parameter
+        var url = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling) + "&colour=%237BB7E0";
+
+        // Redirect to the constructed URL
+        window.location.href = url;
     });
 </script>
 </body>
