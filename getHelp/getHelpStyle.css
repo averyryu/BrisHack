@@ -8,9 +8,10 @@ body {
 }
 
 .button-container {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: center;
+    float: left;
 }
 
 .color-button {
@@ -26,27 +27,43 @@ body {
     align-items: center;
     justify-content: center;
     color: black;
+    font-family: "Caveat", cursive;
+    font-size: large;
+    font-weight: bold;
+
 }
 
-#button1 {
-    background-color: #D9D9D9;
+
+.help-text {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.color-button:hover + .help-text {
+    display: block;
+    opacity: 1;
 }
 
-#button1:hover {
+.helpline-text {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.color-button:hover + .helpline-text {
+    display: block;
+    opacity: 1;
+}
+
+#help-button:hover {
     background-color: #6AC66B;
     color: #fff;
 }
 
-#button2 {
-    background-color: #D9D9D9;
-}
-
-#button2:hover {
+#helpline-button:hover {
     background-color: #DE0F3F;
     color: #fff;
 }
-
-        
+  
 .menu-container {
     position: relative;
 }

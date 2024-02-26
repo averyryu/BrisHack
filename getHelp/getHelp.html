@@ -2,6 +2,9 @@
 <html lang="en">
     <link rel="stylesheet" href="getHelpStyle.css">
     <link rel="responses" href="../responses.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
@@ -38,17 +41,44 @@
             </div>
         </i>
     </p>
+    
 
     </head>
 
     <body>
 
-        <div class="button-container">
-            <a href="" id="button1" class="color-button"><i><b>Where to find help</b></i></a>
-            <a href="" id="button2" class="color-button"><i><b>Mental health helpline</b></i></a>
+        <button id= "help-button" class="color-button">Where to find help</button>
+        <div class="help-text">
+            This is the additional text that will be shown when you hover over the button.
+        </div>
+
+        <button id= "helpline-button" class="color-button">Mental health helpline</button>
+        <div class="helpline-text">
+            <ul>
+                <li>Immediate help via phone or text.</li>
+                <ul>
+                    <li>Call 999</li>
+                    <li>Call NHS 111</li>
+                    <li>Call the Samaritans at 116 123</li>
+                    <li>Text "SHOUT" to 85258 to contact the Shout Crisis Text Line, or text "YM" if you're under 19</li>
+                </ul>
+                <li>For crisis counselors specializing in LGBTQ+ community</li>
+                <ul>
+                    <li>Call the Trevor Project at 1-866-488-7386</li>
+                </ul>
+                <li>For crisis counselors specializing in Sexual Assault</li>
+                <ul>
+                    <li>Call the RAINN National Sexual Assault Hotline at 1-800-656-4673</li>
+                </ul>
+                <li>For veterans</li>
+                <ul>
+                    <li>Call the Veterans Crisis Line at 1-800-273-8255</li>
+                </ul>
+            </ul>
         </div>
     </body>
 
     <script src="../responses.js"></script>
 
+</body>
 </html>
