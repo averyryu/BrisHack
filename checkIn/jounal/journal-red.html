@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="journalstyle.css">
 <head>
     <title>Journaling Page</title>
+    <link rel="stylesheet" href="journalstyle.css">
 </head>
 <body>
-    <a href="../question/question-red.html" class="back-button">&#x2B05;</a>
-    <a href="../../index.html" class="cancel-button">Cancel</a>
+<!-- Adjusted href to redirect to calendar.html -->
+<a href="../../calendar/calendar.html" class="back-button">&#x2B05;</a>
+<a href="../../index.html" class="cancel-button">Cancel</a>
 
-    <form>
-        <label for="feeling">How do you feel today?</label>
-        <input type="text" id="feeling" name="feeling" required>
+<form id="journalForm">
+    <label for="feeling">How do you feel today?</label>
+    <input type="text" id="feeling" name="feeling" required>
 
-        <label for="image">Upload an image:</label>
-        <input type="file" id="image" name="image">
+    <label for="image">Upload an image:</label>
+    <input type="file" id="image" name="image">
+</form>
 
-    </form>
+<h4> Describe what might be causing you to feel such way ...</h4>
+<div class="Submit">
+    <!-- Changed button type to button -->
+    <button id="saveButton" type="button">Save</button>
+</div>
 
-    <h4> Describe what might be causing you to feel such way ...</h4>
-    <div class="Submit">
-        <button type="submit">Save</button>
-    </div>
+<script>
+    // Add click event listener to the save button
+    document.getElementById("saveButton").addEventListener("click", function() {
+        var feeling = document.getElementById("feeling").value;
+
+        // Redirect to calendar.html with feeling as parameter
+        // Use a relative path to navigate to calendar.html
+        window.location.href = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling);
+    });
+</script>
 </body>
 </html>
