@@ -8,70 +8,106 @@
     <title>Activity Recorder</title>
 </head>
 
-<div class ="title-container">
-    <h2>Activity Recorder</h2>
-    <p>We recommend being active to help you release your emotions! </p>
-</div>  
-
 <body>
-    <a href="toolPage.html" class="back-button">&#x2B05;</a>
-    <!-- <label for="activityInput">Record an Activity:</label> -->
-    <input type="text" id="activityInput" placeholder="Enter your activity"><br>
-    <div class="button-container">
-        <button id="recordButton" onclick="recordActivity()">Record</button>
-        <button id="showActivitiesButton" onclick="showActivities()">Show Activities</button>
-    </div>
+<div class="title-container">
+    <h2>Activity Recorder</h2>
+    <p>We recommend being active to help you release your emotions!</p>
+</div>
 
-    <div id="activityList"></div>
+<a href="toolPage.html" class="back-button">&#x2B05;</a>
+<!-- <label for="activityInput">Record an Activity:</label> -->
+<input type="text" id="activityInput" placeholder="Enter your activity"><br>
+<div class="button-container">
+    <button id="recordButton" onclick="recordActivity()">Record</button>
+    <button id="showActivitiesButton" onclick="toggleActivities()">Show Activities</button>
+</div>
 
-    <script>
-        function recordActivity() {
-            var activityInput = document.getElementById('activityInput');
-            var activity = activityInput.value.trim();
+<div id="activityList" style="display: none;"></div>
 
-            if (activity !== '') {
-                // Retrieve existing activities from localStorage
-                var existingActivities = JSON.parse(localStorage.getItem('activities')) || [];
+<script>
+    function recordActivity() {
+        var activityInput = document.getElementById('activityInput');
+        var activity = activityInput.value.trim();
 
-                // Add the new activity
-                existingActivities.push(activity);
+        if (activity !== '') {
+            // Retrieve existing activities from localStorage
+            var existingActivities = JSON.parse(localStorage.getItem('activities')) || [];
 
-                // Store the updated activities back in localStorage
-                localStorage.setItem('activities', JSON.stringify(existingActivities));
+            // Add the new activity
+            existingActivities.push(activity);
 
-                // Display the updated activities immediately
-                showActivities();
+            // Store the updated activities back in localStorage
+            localStorage.setItem('activities', JSON.stringify(existingActivities));
 
-                // Clear the input field
-                activityInput.value = '';
+            // Display the updated activities immediately
+            showActivities();
 
-                alert('Activity recorded successfully!');
-            } else {
-                alert('Please enter a valid activity.');
-            }
+            // Clear the input field
+            activityInput.value = '';
+
+            alert('Activity recorded successfully!');
+        } else {
+            alert('Please enter a valid activity.');
+        }
+    }
+
+    function showActivities() {
+        // Retrieve activities from localStorage
+        var activities = JSON.parse(localStorage.getItem('activities')) || [];
+
+        // Display activities as a table on the page
+        var activityList = document.getElementById('activityList');
+        activityList.innerHTML = ''; // Clear previous content
+
+        if (activities.length === 0) {
+            activityList.innerHTML += '<p>No activities recorded yet.</p>';
+        } else {
+            var table = document.createElement('table');
+            table.innerHTML = `
+                    <tr>
+                        <th>Activity</th>
+                    </tr>
+                `;
+            activities.forEach(function (activity, index) {
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.textContent = activity;
+                var deleteButton = document.createElement('button');
+                var trashcan = document.createElement('img');
+                trashcan.src = '../images/icons8-bin-100 (1).png'
+                // deleteButton.textContent = 'Delete';
+                deleteButton.className = 'delete-button';
+                deleteButton.appendChild(trashcan);
+                deleteButton.onclick = function () {
+                    deleteActivity(index);
+                };
+                cell2.appendChild(deleteButton);
+            });
+            activityList.appendChild(table);
         }
 
-        function showActivities() {
-            // Retrieve activities from localStorage
-            var activities = JSON.parse(localStorage.getItem('activities')) || [];
+        // Show the activities list
+        activityList.style.display = 'block';
+    }
 
-            // Display activities on the page
-            var activityList = document.getElementById('activityList');
-            activityList.innerHTML = '<h3>Recorded Activities:</h3>';
-
-            if (activities.length === 0) {
-                activityList.innerHTML += '<p>No activities recorded yet.</p>';
-            } else {
-                var ul = document.createElement('ul');
-                activities.forEach(function (activity) {
-                    var li = document.createElement('li');
-                    li.textContent = activity;
-                    ul.appendChild(li);
-                });
-                activityList.appendChild(ul);
-            }
+    // Function to toggle the visibility of the activities list
+    function toggleActivities() {
+        var activityList = document.getElementById('activityList');
+        if (activityList.style.display === 'none') {
+            showActivities();
+        } else {
+            activityList.style.display = 'none';
         }
-    </script>
+    }
+
+    function deleteActivity(index) {
+        var activities = JSON.parse(localStorage.getItem('activities')) || [];
+        activities.splice(index, 1);
+        localStorage.setItem('activities', JSON.stringify(activities));
+        showActivities(); // Update the displayed activities
+    }
+</script>
 
 <div class="videotext-container">
     <p>Here are some video suggestions for you to get active!</p>
@@ -79,13 +115,14 @@
 
 <div class="video-container">
     <div class="video">
-        <img src="../images/activitiesYT1.jpg" alt = "Image 1">
-        <a href="https://www.youtube.com/watch?v=1vRto-2MMZo&list=PLN99XDk2SYr5CRS7c1hk62yEultl8KaYn" target="_blank">
+        <img src="../images/activitiesYT1.jpg" alt="Image 1">
+        <a href="https://www.youtube.com/watch?v=1vRto-2MMZo&list=PLN99XDk2SYr5CRS7c1hk62yEultl8KaYn"
+           target="_blank">
             <button>15 mins Dance Party Workout</button>
         </a>
     </div>
     <div class="video">
-        <img src="../images/activitiesYT2.jpg" alt = "Image 2">
+        <img src="../images/activitiesYT2.jpg" alt="Image 2">
         <a href="https://www.youtube.com/watch?v=HjTfMwEiFtQ" target="_blank">
             <button>20 min Pilates Workout | Lower Body</button>
         </a>
@@ -94,13 +131,13 @@
 
 <div class="video-container">
     <div class="video">
-        <img src="../images/activitiesYT3.jpg" alt = "Image 3">
+        <img src="../images/activitiesYT3.jpg" alt="Image 3">
         <a href="https://www.youtube.com/watch?v=GB5uPT4W6p8" target="_blank">
             <button>Slow | Full Body Strength Workout</button>
         </a>
-        </div>
-        <div class="video">
-        <img src="../images/activitiesYT4.jpg" alt = "Image 4">
+    </div>
+    <div class="video">
+        <img src="../images/activitiesYT4.jpg" alt="Image 4">
         <a href="https://www.youtube.com/watch?v=SvPKFsCiMsw" target="_blank">
             <button>10 mins Yoga Full Body Stretch</button>
         </a>
