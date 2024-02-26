@@ -2,9 +2,31 @@ body {
     display: flex;
     flex-direction: column; 
     justify-content: center;
-    align-items: center;
+    align-items: left;
     height: 100vh;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    /* text-align: center; */
+}
+
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 .back-button {
     position: absolute;
     top: 10px; /* Adjust top position */
@@ -30,12 +52,38 @@ body {
     text-decoration: underline;
 }
 
-.submit-button {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    margin: 20px;
-    padding: auto;
-    text-decoration: none;
-    font-size: 36px;
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    color: #6AC66B;
+    background-color: transparent;
+    border: 2px solid #6AC66B;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6AC66B;
+    color: white;
 }
