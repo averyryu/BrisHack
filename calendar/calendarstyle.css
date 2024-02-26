@@ -13,6 +13,10 @@ body {
     margin-top: 20px;
 }
 
+h2 {
+    font-family: serif;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
