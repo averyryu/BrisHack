@@ -28,7 +28,7 @@
         
             <br>
             <div class="Submit">
-                <button type="submit">Save</button>
+                <button id="saveButton" type="button">Save</button>
             </div>
         </div>
         
@@ -37,6 +37,7 @@
     <a href="../../index.html" class="cancel-button">Cancel</a>
 
 <script>
+    // Add click event listener to the save button
     document.getElementById("saveButton").addEventListener("click", function() {
         var feeling = document.getElementById("feeling").value;
 
@@ -45,8 +46,8 @@
 
         // Redirect to the constructed URL
         window.location.href = url;
+
     });
 </script>
-
 </body>
 </html>
