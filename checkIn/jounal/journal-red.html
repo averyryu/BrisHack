@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
     <link rel="stylesheet" href="journalstyle.css">
     <head>
@@ -37,5 +38,43 @@
 
     
 
+=======
+<html lang="en">
+<head>
+    <title>Journaling Page</title>
+    <link rel="stylesheet" href="journalstyle.css">
+</head>
+<body>
+<!-- Adjusted href to redirect to calendar.html -->
+<a href="../../calendar/calendar.html" class="back-button">&#x2B05;</a>
+<a href="../../index.html" class="cancel-button">Cancel</a>
+
+<form id="journalForm">
+    <label for="feeling">How do you feel today?</label>
+    <input type="text" id="feeling" name="feeling" required>
+
+    <label for="image">Upload an image:</label>
+    <input type="file" id="image" name="image">
+</form>
+
+<h4> Describe what might be causing you to feel such way ...</h4>
+<div class="Submit">
+    <!-- Changed button type to button -->
+    <button id="saveButton" type="button">Save</button>
+</div>
+
+<script>
+    // Add click event listener to the save button
+    document.getElementById("saveButton").addEventListener("click", function() {
+        var feeling = document.getElementById("feeling").value;
+
+        // Construct the URL with feeling as the first parameter and "blue" as the second parameter
+        var url = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling) + "&colour=%23DE0F3F";
+
+        // Redirect to the constructed URL
+        window.location.href = url;
+    });
+</script>
+>>>>>>> 46b718a580d67f51d71f136bd79287f319395c3d
 </body>
 </html>

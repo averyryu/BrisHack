@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Mood Tracker</title>
-    <link rel="responses" href="../responses.js">
     <link rel="stylesheet" href="calendarstyle.css"/>
     <link rel="stylesheet" href="../style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
@@ -27,7 +26,6 @@
     </ul>
 </div>
 
-
 <div id="calendar"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -46,46 +44,28 @@
             timeFormat: 'HH:mm'
         });
 
+        // Retrieve feeling parameter from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const feeling = urlParams.get('feeling');
+        const colour = urlParams.get('colour');
 
-        setInterval(updateRealTimeMood, 60000); // Update mood every minute
-        let currentMoment = moment();
-
-        function updateRealTimeMood() {
-            var moodSelect = $('#moodSelect');
-            var selectedMood = moodSelect.val();
-
-            if (selectedMood === 'other') {
-                // Do not update for custom mood
-                return;
-            }
-
+        // If feeling parameter exists, render it as an event on the calendar
+        if (feeling) {
             var moodEvent = {
-                title: selectedMood,
-                start: currentMoment,
+                title: feeling,
+                start: moment(),
                 allDay: false,
-                color: moodSelect.find('option:selected').css('background-color')
+                color: colour
             };
-
-            // Add the mood event to the calendar
             calendar.fullCalendar('renderEvent', moodEvent, true);
         }
-
-        window.trackMood = function () {
-            var moodSelect = $('#moodSelect');
-            var selectedMood = moodSelect.val();
-
-            var moodEvent = {
-                title: selectedMood,
-                start: currentMoment,
-                allDay: false,
-                color: moodSelect.find('option:selected').css('background-color')
-            };
-
-            // Add the mood event to the calendar
-            calendar.fullCalendar('renderEvent', moodEvent, true);
-        };
     });
+
+    // Function to toggle menu sidebar
+    function toggleMenu() {
+        var menuSidebar = document.getElementById('menuSidebar');
+        menuSidebar.classList.toggle('active');
+    }
 </script>
-<script src="../responses.js"></script>
 </body>
 </html>
