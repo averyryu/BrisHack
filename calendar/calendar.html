@@ -58,13 +58,13 @@
             };
             calendar.fullCalendar('renderEvent', moodEvent, true);
         }
-
-        // Function to toggle menu
-        function toggleMenu() {
-            var menuSidebar = document.getElementById('menuSidebar');
-            menuSidebar.classList.toggle('open');
-        }
     });
+
+    // Function to toggle menu sidebar
+    function toggleMenu() {
+        var menuSidebar = document.getElementById('menuSidebar');
+        menuSidebar.classList.toggle('active');
+    }
 </script>
 </body>
 </html>

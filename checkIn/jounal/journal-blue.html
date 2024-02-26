@@ -27,8 +27,8 @@
         var feeling = document.getElementById("feeling").value;
 
         // Redirect to calendar.html with feeling as parameter
-        // Append the selected mood to the URL
-        window.location.href = "calendar.html?feeling=" + encodeURIComponent(feeling);
+        // Use a relative path to navigate to calendar.html
+        window.location.href = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling);
     });
 </script>
 </body>
