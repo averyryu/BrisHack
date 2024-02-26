@@ -45,7 +45,7 @@ p {
 }
 
 #recordButton {
-    background-color: #6acd90; /* Blue color */
+    background-color: #6acd90; /* Green color */
     width: 100px;
     border: none;
     color: #fff; /* Text color */
@@ -56,6 +56,10 @@ p {
     /* border-radius: 20%;  */
     margin-top: 10px;
     margin-right: 10px;
+}
+
+#recordButton:hover {
+    background-color: #4e966a !important; /* Darker green color */
 }
 
 #showActivitiesButton {
@@ -69,6 +73,10 @@ p {
     /* border-radius: 20%;  */
     margin-top: 10px;
 
+}
+
+#showActivitiesButton:hover {
+    background-color: #6186aa !important; /* Darker green color */
 }
 
 #activityList {
