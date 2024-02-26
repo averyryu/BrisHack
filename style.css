@@ -96,8 +96,8 @@ section {
 
 section .loader {
     position: relative;
-    width: 70%;
-    height: 70%;
+    width: 43%;
+    height: 43%;
     animation: animateBg 10s linear infinite
 }
 
@@ -172,7 +172,7 @@ section .loader span::before {
 }
 
 .checkin-button {
-    background-color: #575b5f; /* Blue color */
+    background-color: #424746; /* Blue color */
     color: #fff; /* Text color */
     font-size: 100px;
     width: 100px;
@@ -181,6 +181,10 @@ section .loader span::before {
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+.checkin-button:hover {
+    background-color: #D9D9D9; /* Lighter blue color */
 }
 
 .checkin-text {
@@ -192,7 +196,7 @@ section .loader span::before {
 }
 
 .prompt-text {
-    font-size: 30px;
+    font-size: 26px;
     color: #1C2120; /* Text color */
     padding: 20;
     margin-top: 10%;
