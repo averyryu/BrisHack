@@ -79,11 +79,11 @@ p {
     background-color: #6186aa !important; /* Darker green color */
 }
 
-#activityList {
-    margin-top: 20px;
-    text-align: left;
-    font-family: Georgia, serif;
-}
+/*#activityList {*/
+/*    margin-top: 20px;*/
+/*    text-align: left;*/
+/*    font-family: Georgia, serif;*/
+/*}*/
 
 .videotext-container {
     max-width: 800px;
@@ -142,3 +142,34 @@ img {
 .back-button:hover {
     background-color: lightgray;
 }
+#activityList {
+    margin-top: 20px;
+    font-family: Georgia, serif;
+}
+
+#activityList table {
+    margin-left: 200px;
+    border-collapse: collapse; /* Collapse border spacing */
+    width: 400px; /* Auto width */
+    text-align: left;
+}
+
+
+button.delete-button {
+    margin: auto;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button.delete-button img {
+    width: 35%; /* Make the image fill the button */
+    height: auto; /* Maintain aspect ratio */
+}
+/*button.delete-button:hover {*/
+/*    !*background-color: #cc0000; !* Darker red color on hover *!*!*/
+/*    background-image: url("../images/icons8-bin-100 (1).png");*/
+/*    background-repeat: no-repeat;*/
+/*}*/
