@@ -54,6 +54,7 @@ body {
 
 #button1:hover {
     background-color: #6a9bbc !important;
+    
 }
 
 #button1::after {
@@ -61,7 +62,7 @@ body {
     position: absolute;
     text-align: center;
     width: 100%;
-    font-family: Georgia, serif;
+    font-family: 'Caveat', cursive;
     color: white;
     font-size: 20px;
     line-height: 10;
