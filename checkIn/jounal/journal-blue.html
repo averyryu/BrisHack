@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Journaling Page</title>
+<html>
+
     <link rel="stylesheet" href="journalstyle.css">
-</head>
-<body>
-<a href="../question/question-blue.html" class="back-button">&#x2B05;</a>
-<a href="../../index.html" class="cancel-button">Cancel</a>
+    <head>
+        <title>Journaling Page</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="text-container">
+                <h2> Describe what might be causing you to feel such way ...</h2>
+            </div>
 
-<form>
-    <label for="feeling">How do you feel today?</label>
-    <input type="text" id="feeling" name="feeling" required>
+            <div class="form-container">
+                <form>
+                    <label for="feeling">How do you feel today?</label>
+                    <br>
+                    <input type="text" id="feeling" name="feeling" required>
+                </form>
+                <br>
+                <form>
+                    <label for="image">Upload an image:</label>
+                    <br>
+                    <input type="file" id="image" name="image">
+            
+                </form>
+            </div>
+        
+            <br>
+            <div class="Submit">
+                <button id="saveButton" type="button">Save</button>
+            </div>
+        </div>
+        
 
-    <label for="image">Upload an image:</label>
-    <input type="file" id="image" name="image">
-</form>
-
-<h4> Describe what might be causing you to feel such way ...</h4>
-<div class="Submit">
-    <!-- Added id="saveButton" to the button -->
-    <button id="saveButton" type="button">Save</button>
-</div>
+    <a href="../question/question-blue.html" class="back-button">&#x2B05;</a>
+    <a href="../../index.html" class="cancel-button">Cancel</a>
 
 <script>
     // Add click event listener to the save button
@@ -28,7 +42,7 @@
         var feeling = document.getElementById("feeling").value;
 
         // Construct the URL with feeling as the first parameter and "blue" as the second parameter
-        var url = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling) + "&colour=%237BB7E0";
+        var url = "../../calendar/calendar.html?feeling=" + encodeURIComponent(feeling) + "&colour=%236AC66B";
 
         // Redirect to the constructed URL
         window.location.href = url;
