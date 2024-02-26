@@ -4,16 +4,49 @@ body {
     margin: 20px;
 }
 
+.title-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+
+}
+
+.button-container {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    margin-left: 19%;
+    padding: 20px;
+    justify-content: center;
+    align-items: left;
+    text-align: left; /* Add this line */
+}
+
 #activityInput {
-    width: 300px;
+    width: 800px;
+    height: 40px;
     padding: 8px;
-    margin-right: 10px;
+    margin: 10px;
     /* border-radius: 10%;  */
     font-family: Georgia, serif;
 }
 
 #recordButton {
-    background-color: #6acd90; /* Blue color */
+    background-color: #6acd90; /* Green color */
+    width: 100px;
     border: none;
     color: #fff; /* Text color */
     padding: 10px;
@@ -23,6 +56,10 @@ body {
     /* border-radius: 20%;  */
     margin-top: 10px;
     margin-right: 10px;
+}
+
+#recordButton:hover {
+    background-color: #4e966a !important; /* Darker green color */
 }
 
 #showActivitiesButton {
@@ -38,10 +75,60 @@ body {
 
 }
 
+#showActivitiesButton:hover {
+    background-color: #6186aa !important; /* Darker green color */
+}
+
 #activityList {
     margin-top: 20px;
     text-align: left;
     font-family: Georgia, serif;
+}
+
+.videotext-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+.video {
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    color: #A359A0;
+    background-color: transparent;
+    border: 2px solid #A359A0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #A359A0;
+    color: #fff;
+}
+
+img {
+    width: 320px;
+    height: 180px;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 5px;
 }
 
 .back-button {

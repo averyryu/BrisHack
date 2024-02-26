@@ -11,6 +11,13 @@ body {
     text-align: center;
 }
 
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
 h1 {
     font-size: 32px;
     font-weight: bold;
@@ -18,10 +25,11 @@ h1 {
     margin-bottom: 10px;
 }
 
-h2 {
-    font-size: 18px;
+p {
+    font-size: 16px;
     color: #666;
     margin-bottom: 20px;
+    font-style: italic;
 }
 
 .video-container {
@@ -35,8 +43,8 @@ h2 {
 }
 
 img {
-    width: 200px;
-    height: 150px;
+    width: 320px;
+    height: 180px;
     display: block;
     margin: 0 auto 10px;
     border-radius: 5px;
@@ -47,16 +55,18 @@ button {
     font-size: 16px;
     font-weight: bold;
     font-family: Georgia, serif;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
+    color: #A359A0;
+    background-color: transparent;
+    border: 2px solid #A359A0;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #A359A0;
+    color: white;
 }
 
 .back-button {
