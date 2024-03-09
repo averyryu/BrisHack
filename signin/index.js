@@ -1,59 +1,48 @@
-const express = require("express");
-const mysql = require("mysql2");
-const cors = require("cors");
 const app = express();
-const bcrypt = require('bcrypt');
+const express = require('express');
+const mysql = require('mysql2');
+const bodyParser = require('body-parser');
 
+const app = express();
+const port = 63342;
 
-const corsOptions = {
-    origin: 'http://localhost:8080',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-};
-
-app.use(cors(corsOptions));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'hyoyeonlee',
-    password: 'Password1!',
-    database: 'TheraGo',
+  host: 'localhost',
+  user: 'hyoyeonlee',
+  password: 'Password1!',
+  database: 'TheraGo'
 });
 
-connection.connect((err) =>{
-   if (err){
-       console.error('Error connecting to MySQL:', err);
-       return;
-   }
-   console.log('Connected to MySQL server');
-});
+app.post('/register', (req, res) => {
+  const { firstname, lastname, age, username, password } = req.body;
 
-app.post('/register', async (req, res) => {
-    const fName = req.body.items[0];
-    const lName = req.body.items[1];
-    const age = req.body.items[2];
-    const username = req.body.items[3];
-    const password = req.body.items[4];
+  const query1 = 'INSERT INTO User (firstname, lastname, age) VALUES (?, ?, ?)';
+  const userVal = [firstname, lastname, age];
 
-    const hashedPwd = await bcrypt.hash(password, 10);
+  connection.query(query1, userVal, (userErr, userResult) => {
+    if (userErr) {
+      console.error('Error inserting into User table: ', userErr);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
 
-    console.log('Original password:', password);
-    console.log('Hashed password: ', hashedPwd);
+    const loginQuery = 'INSERT INTO UserLogin (username, hashpwd, customerID) VALUES (?, ?, ?)';
+    const loginVal = [username, password, userResult.insertId];
 
-    const query = 'INSERT INTO User (firstname, lastname) VALUES (?,?)';
-    connection.query(query, [fName, lName], (error, results) => {
-        if (error) {
-            console.error('Error adding item to customer: ', error);
-            res.status(500).json({message: 'Internal Server Error'});
-            return;
-        }
-        const customerID = results.insertId;
-
-        const query2 = 'INSERT INTO UserLogin (username, hashpwd, customerID) VALUES (?,?,?)'
+    connection.query(loginQuery, loginVal, (loginErr) => {
+      if (loginErr) {
+        console.error('Error inserting into UserLogin table: ', loginErr);
+        res.status(500).send('Internal Server Error');
+      } else {
+        console.log('Data inserted successfully!');
+        res.status(200).send('Registration successful!');
+      }
     });
+  });
 });
 
-app.listen(8080, () =>{
-    console.log('Server running...');
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
