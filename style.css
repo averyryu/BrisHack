@@ -88,6 +88,45 @@ p {
     color: #fff;
 }
 
+.login-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    color: gray;
+}
+.login-button:hover {
+    /* background-color: lightgray;
+    border-radius: 5px; */
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section .loader {
+    position: relative;
+    width: 43%;
+    height: 43%;
+    animation: animateBg 10s linear infinite;
+}
+
+.login-button {
+    float: right; /* Add this line to float the login button to the right */
+
+}
+
 * {
     margin: 0;
     padding: 0;

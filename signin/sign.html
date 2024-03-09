@@ -6,18 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In and Register</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="logo">
+        <a href="../index.html"><img src="../images/EncodeLogo.png" alt="Logo" style="width: 100px;"></a>
+    </div>
     <div class="container">
         <div id="signin-form">
-            <h2>Sign In</h2>
+            <h2>Sign in to your account</h2>
             <form action="/signin" method="post">
-                <label for="username">Username:</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
+                <br> </br>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
-                <button type="submit">Sign In</button>
+                <br> </br>
+                <label for="remember">Remember Me</label>
+                <input type="checkbox" id="remember" name="remember">
+                <br> </br>
+                <button type="submit", id="submit">Sign In</button>
             </form>
             <p>Don't have an account? <a href="../signin/register.html">Register here</a>.</p>
         </div>

@@ -1,0 +1,32 @@
+body {
+    font-family: "Gochi Hand", cursive;
+    background-color: #fdf3eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Added */
+    margin: 0; /* Added */
+}
+
+h2 {
+    font-size: 50px;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+#submit {
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px 40px;
+    border-color: lightgray;
+}
+
+#submit:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
