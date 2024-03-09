@@ -52,6 +52,19 @@
         const chatContainer = document.getElementById('chat-container');
 
         // Function to display a message in the chat
+
+        function displayAndSveMessage(message, isUser = false){
+            const messageDiv = document.createElement('div');
+            messageDiv.className = isUser ? 'user-message' : 'text-bubble';
+            messageDiv.textContent = message;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+
+            const savedMessages = JSON.parse(localStorage.getItem('userMessages')) || [];
+            savedMessages.push({message, isUser});
+            localStorage.setItem('userMessages', JSON.stringify(savedMessages));
+            console.log("logged: ", savedMessages);
+        }
         function displayMessage(message, isUser = false) {
             const messageDiv = document.createElement('div');
             messageDiv.className = isUser ? 'user-message' : 'text-bubble';
@@ -76,7 +89,8 @@
             outputTextBox.value = transcript; // Set the value of the text box
 
             // Display the user's response
-            displayMessage(transcript, true);
+            // displayMessage(transcript, true);
+            displayAndSveMessage(transcript, true);
 
             // Schedule the next question to be displayed after a delay
             if (questionIndex < questions.length) {
@@ -117,6 +131,7 @@
 
         function saveText() {
             const textToSave = outputTextBox.value;
+            console.log(textToSave);
             localStorage.setItem('transcribedText', textToSave);
             alert('Text saved to local storage!');
         }
