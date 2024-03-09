@@ -1,10 +1,11 @@
 body {
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
     text-align: center;
     margin: 20px;
 }
 
 .title-container {
+    font-family: "Gochi Hand", cursive;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -12,26 +13,25 @@ body {
 }
 
 h1 {
+    font-family: "Gochi Hand", cursive;
     font-size: 32px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
 }
 p {
+    font-family: "Gochi Hand", cursive;
     font-size: 16px;
     color: #666;
     margin-bottom: 20px;
     font-style: italic;
-
 }
 
 .button-container {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
+    font-family: "Gochi Hand", cursive;
     margin-left: 19%;
     padding: 20px;
     justify-content: center;
-    align-items: left;
     text-align: left; /* Add this line */
 }
 
@@ -40,8 +40,7 @@ p {
     height: 40px;
     padding: 8px;
     margin: 10px;
-    /* border-radius: 10%;  */
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 #recordButton {
@@ -51,11 +50,11 @@ p {
     color: #fff; /* Text color */
     padding: 10px;
     cursor: pointer;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
     font-size: 12px;
-    /* border-radius: 20%;  */
     margin-top: 10px;
     margin-right: 10px;
+    margin-left: 27px;
 }
 
 #recordButton:hover {
@@ -63,16 +62,14 @@ p {
 }
 
 #showActivitiesButton {
+    font-family: "Gochi Hand", cursive;
     background-color: #7cacdc; /* Blue color */
     border: none;
     color: #fff; /* Text color */
     padding: 10px;
     cursor: pointer;
-    font-family: Georgia, serif;
     font-size: 12px;
-    /* border-radius: 20%;  */
     margin-top: 10px;
-
 }
 
 #showActivitiesButton:hover {
@@ -86,13 +83,15 @@ p {
 /*}*/
 
 .videotext-container {
+    font-family: "Gochi Hand", cursive;
     max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
     text-align: left;
+    margin-left: 360px;
 }
 
 .video-container {
+    font-family: "Gochi Hand", cursive;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -109,7 +108,7 @@ button {
     padding: 10px 20px;
     font-size: 12px;
     font-weight: bold;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
     color: #A359A0;
     background-color: transparent;
     border: 2px solid #A359A0;
@@ -148,6 +147,7 @@ img {
 }
 
 #activityList table {
+    font-family: "Gochi Hand", cursive;
     margin-left: 200px;
     border-collapse: collapse; /* Collapse border spacing */
     width: 400px; /* Auto width */
