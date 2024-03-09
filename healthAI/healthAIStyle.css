@@ -52,3 +52,14 @@ body {
 #save-btn:hover {
     background-color: #A359A0;
 }
+.back-button {
+    position: absolute;
+    top: 10px; /* Adjust top position */
+    left: 10px; /* Adjust left position */
+    font-size: 36px;
+    text-decoration: none;
+    color: black
+}
+.back-button:hover {
+    background-color: lightgray;
+}
