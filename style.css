@@ -1,12 +1,5 @@
 /* FILEPATH: style.css */
 
-/* .gochi-hand-regular {
-    font-family: "Gochi Hand", cursive;
-    font-weight: 400;
-    font-style: normal;
-  } */
-  
-
 /* Reset default browser styles */
 body, h1, p {
     margin: 0;
@@ -18,8 +11,8 @@ body, html {
 }
 /* Add your custom styles here */
 body {
-    font-family: "Gochi Hand", cursive;
-    background-color: #fdf3eb;
+    font-family: Georgia, serif;
+    background-color: #f2f2f2;
 }
 
 h1 {
@@ -195,15 +188,15 @@ section .loader span::before {
 }
 
 .checkin-text {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: #1C2120; /* Text color */
     /* margin: 0; */
-    font-family: "Gochi Hand", cursive;
+    font-family: sans-serif;
 }
 
 .prompt-text {
-    font-size: 34px;
+    font-size: 26px;
     color: #1C2120; /* Text color */
     padding: 20;
     margin-top: 10%;
