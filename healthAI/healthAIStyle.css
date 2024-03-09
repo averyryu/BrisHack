@@ -4,8 +4,9 @@ body {
     align-items: center;
     height: 100vh; /* Set the body height to the viewport height to center vertically */
     margin: 0; /* Remove default margin */
-    font-family: Arial, sans-serif; /* Set a font family */
+    font-family: "Gochi Hand", cursive; /* Set a font family */
     text-align: center; /* Center align text within the body */
+    background-color: #fdf3eb;
 }
 
 #content {
@@ -15,6 +16,7 @@ body {
 #output {
     margin-top: 20px; /* Add some margin to the output text */
 }
+
 #start-btn {
     background-image: url('../images/mic.png');
     background-color: transparent;
@@ -34,23 +36,35 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
+    
 }
 
 .container input {
     margin-top: 10px; /* Adjust the top margin as needed */
     margin-bottom: 10px;
+    width: 400px;
+    height: 40px;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    border-color: #774276;
+    background-color: white;
 }
 
 #save-btn {
     border-color: #A359A0;
+    width: 100px;
     cursor: pointer;
-    outline: none;
-    padding: 0;
-    background: none;
+    padding: 10px;
+    background: #A359A0;
+    font: "Open Sans", sans-serif;
+    color: white;
     border-radius: 5px;
 }
+
 #save-btn:hover {
-    background-color: #A359A0;
+    background-color: #774276;
+    color: white;
 }
 .back-button {
     position: absolute;

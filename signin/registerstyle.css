@@ -1,0 +1,47 @@
+body {
+    font-family: "Gochi Hand", cursive;
+    background-color: #fdf3eb;
+    display: block;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - 20px); /* Added */
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 50px;
+    margin-bottom: auto;
+}
+
+
+
+.logo:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+p {
+    padding: 20px;
+}
+
+#firstname, #lastname, #username, #password, #age {
+    width: 400px;
+    height: 40px;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#submit {
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px 40px;
+    border-color: lightgray;
+}
+
+#submit:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
