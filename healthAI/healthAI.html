@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+</head>
+<body>
+<h1>Speech to Text Conversion</h1>
+<p>Click the button, then speak into your microphone.</p>
+
+<button id="start-btn">Start Listening</button>
+<p id="output"></p>
+
+<script>
+    // Check browser support for SpeechRecognition
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+        // Set recognition language
+        recognition.lang = 'en-US';
+
+        // Event handler for when speech recognition starts
+        recognition.onstart = function() {
+            document.getElementById('output').textContent = 'Listening...';
+        };
+
+        // Event handler for when speech recognition results are available
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById('output').textContent = 'You said: ' + transcript;
+        };
+
+        // Event handler for speech recognition errors
+        recognition.onerror = function(event) {
+            document.getElementById('output').textContent = 'Error occurred: ' + event.error;
+        };
+
+        // Event handler for when speech recognition ends
+        recognition.onend = function() {
+            document.getElementById('start-btn').textContent = 'Start Listening';
+        };
+
+        // Event handler for button click to start speech recognition
+        document.getElementById('start-btn').addEventListener('click', function() {
+            if (recognition.running) {
+                recognition.stop();
+                document.getElementById('start-btn').textContent = 'Start Listening';
+            } else {
+                recognition.start();
+                document.getElementById('start-btn').textContent = 'Stop Listening';
+                document.getElementById('output').textContent = 'Listening...';
+            }
+        });
+    } else {
+        document.getElementById('output').textContent = 'Speech recognition is not supported in your browser.';
+    }
+</script>
+</body>
+</html>
