@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the body height to the viewport height to center vertically */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a font family */
+    text-align: center; /* Center align text within the body */
+}
+
+#content {
+    width: 80%; /* Set the content width */
+}
+
+#output {
+    margin-top: 20px; /* Add some margin to the output text */
+}
+#start-btn {
+    background-image: url('../images/mic.png');
+    background-color: transparent;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border: none;
+    display: inline-block;
+}
+#start-btn:hover {
+    background-color: pink; /* Change background color on hover */
+    cursor: pointer;
+    border-radius: 5px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.container input {
+    margin-top: 10px; /* Adjust the top margin as needed */
+    margin-bottom: 10px;
+}
+
+#save-btn {
+    border-color: #A359A0;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    background: none;
+    border-radius: 5px;
+}
+#save-btn:hover {
+    background-color: #A359A0;
+}
