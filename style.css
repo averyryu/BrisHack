@@ -39,7 +39,6 @@ p {
 }
 
 .menu-icon {
-    position: absolute;
     top: 20px;
     left: 20px;
     cursor: pointer;
@@ -89,7 +88,6 @@ p {
 }
 
 .login-button {
-    position: absolute;
     top: 10px;
     right: 10px;
     font-size: 30px;
@@ -101,26 +99,6 @@ p {
     /* background-color: lightgray;
     border-radius: 5px; */
     color: black;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-section .loader {
-    position: relative;
-    width: 43%;
-    height: 43%;
-    animation: animateBg 10s linear infinite;
 }
 
 * {
@@ -223,7 +201,7 @@ section {
 .prompt-text {
     font-size: 34px;
     color: #1C2120; /* Text color */
-    padding: 20;
+    padding: 20px;
     margin-top: 10%;
     margin-bottom: 30%;
 }
