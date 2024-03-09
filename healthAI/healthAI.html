@@ -18,7 +18,9 @@
         <button id="save-btn">Save</button>
     </div>
 </div>
-<!--<script src="../healthAI/healthAIscript.js"></script>-->
+<div class="quit-to-checkin" id="quit">
+    <a href="../index.html" class="quit-to-checkin">Quit</a>
+</div>
 <script>
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
