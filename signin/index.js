@@ -41,7 +41,7 @@ app.post('/register', async (req, res) => {
     console.log('Original password:', password);
     console.log('Hashed password: ', hashedPwd);
 
-    const query = 'INSERT INTO User (firstname, lastname) VALUES (?, ?)';
+    const query = 'INSERT INTO User (firstname, lastname) VALUES (?,?)';
     connection.query(query, [fName, lName], (error, results) => {
         if (error) {
             console.error('Error adding item to customer: ', error);
@@ -50,7 +50,7 @@ app.post('/register', async (req, res) => {
         }
         const customerID = results.insertId;
 
-        const query2 = 'INSERT INTO UserLogin (
+        const query2 = 'INSERT INTO UserLogin (username, hashpwd, customerID) VALUES (?,?,?)'
     });
 });
 
