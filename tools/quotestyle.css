@@ -5,6 +5,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    font-family: "Gochi Hand", cursive;
 }
 .back-button {
     position: absolute;
@@ -50,7 +51,7 @@ body {
     justify-content: center;
     color: white;
     font-size: 20px;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
     text-align: center;
 }
 
@@ -61,7 +62,7 @@ body {
     height: 400px;
     margin: 0 auto;
     perspective: 1000px;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .quote-card {
@@ -75,13 +76,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #D9D9D9;
     border-radius: 8px;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .quote-card p {
     padding: 20px;
     font-size: 1.2em;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .swipe-left,
@@ -92,7 +93,7 @@ body {
     color: #888;
     cursor: pointer;
     z-index: 2;
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .swipe-left::before,
@@ -114,7 +115,7 @@ body {
     /* Ensure border is included in the dimensions */
     z-index: -1;
     /* Place the circle behind the text */
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .swipe-left {
@@ -122,7 +123,7 @@ body {
     /* Adjust horizontal position */
     top: 40%;
     /* Adjust vertical position */
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 .swipe-right {
@@ -130,7 +131,7 @@ body {
     /* Adjust horizontal position */
     top: 40%;
     /* Adjust vertical position */
-    font-family: Georgia, serif;
+    font-family: "Gochi Hand", cursive;
 }
 
 #quote-container .swipe-left:hover::before,

@@ -1,13 +1,3 @@
-/* FILEPATH: style.css */
-
-/* .gochi-hand-regular {
-    font-family: "Gochi Hand", cursive;
-    font-weight: 400;
-    font-style: normal;
-  } */
-  
-
-/* Reset default browser styles */
 body, h1, p {
     margin: 0;
     padding: 0;
@@ -16,7 +6,7 @@ body, html {
     height: 100%;
     margin: 0;
 }
-/* Add your custom styles here */
+
 body {
     font-family: "Gochi Hand", cursive;
     background-color: #fdf3eb;
@@ -99,8 +89,6 @@ p {
     padding: 20px;
 }
 .login-button:hover {
-    /* background-color: lightgray;
-    border-radius: 5px; */
     color: black;
 }
 
@@ -118,25 +106,15 @@ section {
     }
 }
 
-/* .pulse {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: #7BB7E0;
-    border-radius: 50%;
-    margin-left: 30px;
-} */
-
 .pulse {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
     background-color: #7BB7E0;
     border-radius: 50%;
-    margin-left: 30px;
 }
 
 .pulse span {
@@ -204,7 +182,6 @@ section {
 
 
 .prompt-text {
-    /* font-size: px; */
     color: #1C2120; /* Text color */
     padding: 20px;
     margin-top: 10%;
