@@ -1,10 +1,9 @@
-const app = express();
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-
+const bcrypt = require('bcrypt');
 const app = express();
-const port = 63342;
+const port = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -17,11 +16,10 @@ const connection = mysql.createConnection({
 
 app.post('/register', (req, res) => {
   const { firstname, lastname, age, username, password } = req.body;
+  const userQuery = 'INSERT INTO User (firstname, lastname, age) VALUES (?, ?, ?)';
+  const userValues = [firstname, lastname, age];
 
-  const query1 = 'INSERT INTO User (firstname, lastname, age) VALUES (?, ?, ?)';
-  const userVal = [firstname, lastname, age];
-
-  connection.query(query1, userVal, (userErr, userResult) => {
+  connection.query(userQuery, userValues, (userErr, userResult) => {
     if (userErr) {
       console.error('Error inserting into User table: ', userErr);
       res.status(500).send('Internal Server Error');
