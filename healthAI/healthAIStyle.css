@@ -1,79 +1,102 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Set the body height to the viewport height to center vertically */
-    margin: 0; /* Remove default margin */
-    font-family: "Gochi Hand", cursive; /* Set a font family */
-    text-align: center; /* Center align text within the body */
-    background-color: #fdf3eb;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
 #content {
-    width: 80%; /* Set the content width */
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.text-bubble {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
 #output {
-    margin-top: 20px; /* Add some margin to the output text */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#save-btn {
+    background-color: #28a745;
+}
+
+
+.back-button {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 #start-btn {
     background-image: url('../images/mic.png');
-    background-color: transparent;
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border: none;
-    display: inline-block;
+    cursor: pointer;
 }
+
+
 #start-btn:hover {
-    background-color: pink; /* Change background color on hover */
-    cursor: pointer;
-    border-radius: 5px;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-    
+    opacity: 0.8;
 }
 
-.container input {
-    margin-top: 10px; /* Adjust the top margin as needed */
-    margin-bottom: 10px;
-    width: 400px;
-    height: 40px;
-    padding: 8px;
-    margin: 10px;
-    border-radius: 5px;
-    border-color: #774276;
-    background-color: white;
-}
-
-#save-btn {
-    border-color: #A359A0;
-    width: 100px;
-    cursor: pointer;
+.user-message {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 10px;
     padding: 10px;
-    background: #A359A0;
-    font: "Open Sans", sans-serif;
-    color: white;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    align-self: flex-end;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
-#save-btn:hover {
-    background-color: #774276;
-    color: white;
-}
 .back-button {
-    position: absolute;
-    top: 10px; /* Adjust top position */
-    left: 10px; /* Adjust left position */
+    margin: 20px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
     font-size: 36px;
-    text-decoration: none;
-    color: black
 }
-.back-button:hover {
-    background-color: lightgray;
-}
+
