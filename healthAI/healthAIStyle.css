@@ -57,6 +57,7 @@ button {
     background-color: #28a745;
 }
 
+
 .back-button {
     text-decoration: none;
     color: #007bff;
@@ -72,6 +73,7 @@ button {
     border: none;
     cursor: pointer;
 }
+
 
 #start-btn:hover {
     opacity: 0.8;
