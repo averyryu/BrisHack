@@ -78,13 +78,16 @@
             // Display the user's response
             displayMessage(transcript, true);
 
-            // Display the next question
+            // Schedule the next question to be displayed after a delay
             if (questionIndex < questions.length) {
-                const nextQuestion = questions[questionIndex];
-                displayQuestion(nextQuestion);
-                questionIndex++;
+                setTimeout(function () {
+                    const nextQuestion = questions[questionIndex];
+                    displayQuestion(nextQuestion);
+                    questionIndex++;
+                }, 3000); // 3000 milliseconds (3 seconds) delay
             }
         };
+
 
         // Event handler for speech recognition errors
         recognition.onerror = function (event) {
@@ -109,13 +112,6 @@
                 isListening = true;
                 document.getElementById('start-btn').style.backgroundImage = "url('../images/mic.png')"; // Change background to active microphone icon
                 outputTextBox.value = 'Listening...';
-
-                // Display the first question
-                if (questionIndex < questions.length) {
-                    const firstQuestion = questions[questionIndex];
-                    displayQuestion(firstQuestion);
-                    questionIndex++;
-                }
             }
         }
 
