@@ -89,6 +89,7 @@ p {
 }
 
 .login-button {
+    position: absolute;
     top: 10px;
     right: 10px;
     font-size: 30px;
@@ -101,12 +102,6 @@ p {
     /* background-color: lightgray;
     border-radius: 5px; */
     color: black;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 section {
@@ -123,12 +118,25 @@ section {
     }
 }
 
-.pulse {
+/* .pulse {
     position: relative;
     width: 300px;
     height: 300px;
     background-color: #7BB7E0;
     border-radius: 50%;
+    margin-left: 30px;
+} */
+
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-color: #7BB7E0;
+    border-radius: 50%;
+    margin-left: 30px;
 }
 
 .pulse span {
@@ -177,31 +185,26 @@ section {
 }
 
 .checkin-button {
-    background-color: #424746; /* Blue color */
-    color: #fff; /* Text color */
+    background-color: #fff; 
+    color: #424746;
     font-size: 20px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Round background */
+    opacity: 0.7;
+    width: 200px;
+    height: 80px;
+    border-radius: 50px; /* Round background */
     border: none;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 .checkin-button:hover {
-    background-color: #D9D9D9; /* Lighter blue color */
+    background-color: gray; 
+    color: #fff;
+    opacity: 1;
 }
 
-.checkin-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1C2120; /* Text color */
-    /* margin: 0; */
-    font-family: "Gochi Hand", cursive;
-}
 
 .prompt-text {
-    font-size: 34px;
+    /* font-size: px; */
     color: #1C2120; /* Text color */
     padding: 20px;
     margin-top: 10%;
