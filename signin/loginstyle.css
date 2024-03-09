@@ -1,40 +1,102 @@
+/*body {*/
+/*    font-family: "Gochi Hand", cursive;*/
+/*    background-color: #fdf3eb;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    text-align: center;*/
+/*    height: 100vh; !* Added *!*/
+/*    margin: auto; !* Added *!*/
+/*    padding: 30px;*/
+
+/*}*/
+
+/*h2 {*/
+/*    font-size: 50px;*/
+/*}*/
+
+/*.logo:hover{*/
+/*    transform: scale(1.2);*/
+/*    transition: 0.3s;*/
+/*}*/
+
+/*#username {*/
+/*    width: 400px;*/
+/*    height: 40px;*/
+/*    font-size: 15px;*/
+/*    padding: 8px;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*#password {*/
+/*    width: 400px;*/
+/*    height: 40px;*/
+/*    font-size: 15px;*/
+/*    padding: 8px;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*#submit {*/
+/*    background-color: white;*/
+/*    border-radius: 40px;*/
+/*    padding: 10px 40px;*/
+/*    border-color: lightgray;*/
+/*}*/
+
+/*#submit:hover {*/
+/*    background-color: lightgray;*/
+/*    cursor: pointer;*/
+/*}*/
 body {
     font-family: "Gochi Hand", cursive;
-    background-color: #fdf3eb;
+    background: linear-gradient(to right, #6f4c95 57%, #fdf3eb 43%); /* Split background */
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: right; /* Move content to the sides */
     text-align: center;
-    height: 100vh; /* Added */
-    margin: auto; /* Added */
+    height: 100vh;
+    margin: 0;
     padding: 30px;
-
+    position: relative;
 }
 
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    top: 0; /* Position at the top */
+    left: 75%; /* Move to the horizontal center */
+}
+
+.container {
+    text-align: center; /* Align form container to the right */
+    position: relative; /* Added position relative for the container */
+}
+
+h1{
+    font-size: 60px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+}
 h2 {
     font-size: 50px;
 }
 
-.logo:hover{
-    transform: scale(1.2);
-    transition: 0.3s;
+.logo img {
+    width: 100px;
 }
 
-#username {
-    width: 400px;
-    height: 40px;
-    font-size: 15px;
-    padding: 8px;
-    border-radius: 10px;
+#signin-form {
+    padding: 20px;
 }
 
+#username,
 #password {
-    width: 400px;
+    width: 300px;
     height: 40px;
     font-size: 15px;
     padding: 8px;
     border-radius: 10px;
+    margin-bottom: 10px; /* Add spacing between inputs */
 }
 
 #submit {
@@ -48,3 +110,29 @@ h2 {
     background-color: lightgray;
     cursor: pointer;
 }
+
+.additional-info {
+    position: absolute;
+    text-align: left;
+    top: 0;
+    left: 0;
+    width: 50%; /* Set width to occupy half of the page */
+    padding: 40px;
+    color: white;
+    font-family: "Gochi Hand", cursive;
+    z-index: 1; /* Ensure additional info stays above other content */
+    margin: auto;
+}
+.image-paragraph {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+    font-family: "Open Sans", sans-serif;
+}
+
+.image-paragraph img {
+    margin-right: 10px; /* Add space between image and text */
+    height: 3em;
+}
+
+

@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cohere API Demo</title>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <link rel="responses" href="api.js"><!-- Include Axios library -->
+<!--  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+  <link rel="responses" href="api.js">
 </head>
 <body>
 
 <h1>Cohere API Demo</h1>
 
-<textarea id="input-text" rows="5" cols="50" placeholder="Enter text to analyze..."></textarea>
-<button onclick="analyzeText()">Analyze Text</button>
-
-<div id="analysis-result"></div>
+<textarea id="user-input" rows="5" cols="50" placeholder="Enter text to classify..."></textarea>
+<button onclick="classify()">Classify Text</button>
+<div id="classification-result"></div>
 
 <script src="api.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
 
 </body>
 </html>
